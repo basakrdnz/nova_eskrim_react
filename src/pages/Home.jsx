@@ -36,8 +36,8 @@ const Home = () => {
           <div
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('public/eskrim_bg.jpg')`
-            }}
+              backgroundImage: 'url("/eskrim_bg.jpg")',
+              }}
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
