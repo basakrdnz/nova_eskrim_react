@@ -1,9 +1,31 @@
+import { Award, Medal, Sparkles } from 'lucide-react'
+
 const Medals = () => {
   const achievements = [
-    'U10 Erkek Kılıç – Türkiye Şampiyonası 2.’liği',
-    'U12 Erkek Kılıç – Okullar Arası Ankara 3.’lüğü',
-    'Yıldızlar Erkek Kılıç – Okullar Arası Ankara 3.’lüğü',
-    'U12 Erkek Kılıç – Türkiye Şampiyonası 3.’lüğü'
+    {
+      id: 1,
+      category: 'U10 Erkek Kılıç',
+      event: 'Türkiye Şampiyonası',
+      placement: '2.’lik'
+    },
+    {
+      id: 2,
+      category: 'U12 Erkek Kılıç',
+      event: 'Okullar Arası Ankara',
+      placement: '3.’lük'
+    },
+    {
+      id: 3,
+      category: 'Yıldızlar Erkek Kılıç',
+      event: 'Okullar Arası Ankara',
+      placement: '3.’lük'
+    },
+    {
+      id: 4,
+      category: 'U12 Erkek Kılıç',
+      event: 'Türkiye Şampiyonası',
+      placement: '3.’lük'
+    }
   ]
 
   return (
@@ -32,12 +54,40 @@ const Medals = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <ul className="space-y-3 text-gray-700">
+          <div className="bg-white rounded-2xl shadow-lg p-8">
+            <div className="flex items-center gap-3 mb-6 text-yellow-700">
+              <Sparkles className="w-5 h-5" />
+              <span className="font-semibold">Öne Çıkan Dereceler</span>
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               {achievements.map((item) => (
-                <li key={item}>• {item}</li>
+                <div
+                  key={item.id}
+                  className="border border-gray-100 rounded-xl p-6 shadow-sm hover:shadow-md transition-shadow"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <div className="text-sm text-yellow-700 font-semibold mb-2">
+                        {item.event}
+                      </div>
+                      <h3 className="text-lg font-semibold text-gray-900 mb-1">
+                        {item.category}
+                      </h3>
+                      <div className="text-gray-600">
+                        {item.placement}
+                      </div>
+                    </div>
+                    <div className="w-12 h-12 rounded-full bg-yellow-50 flex items-center justify-center">
+                      <Medal className="w-6 h-6 text-yellow-600" />
+                    </div>
+                  </div>
+                  <div className="mt-4 inline-flex items-center rounded-full bg-yellow-100 text-yellow-700 text-xs font-semibold px-3 py-1">
+                    <Award className="w-3 h-3 mr-2" />
+                    Resmi Derece
+                  </div>
+                </div>
               ))}
-            </ul>
+            </div>
           </div>
         </div>
       </section>

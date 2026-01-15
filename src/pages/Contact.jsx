@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Phone, Mail, MapPin, Clock, Send, Instagram, Globe } from 'lucide-react'
 
 const Contact = () => {
+  const missingClass = 'bg-red-100 text-red-700 px-2 py-0.5 rounded'
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -281,10 +282,14 @@ const Contact = () => {
               Online Formlar
             </h2>
             <p className="text-gray-600 mb-4">
-              Sporcu tanıma formu ve KVKK formu yakında paylaşılacaktır.
+              <span className={missingClass}>
+                Sporcu tanıma formu ve KVKK formu yakında paylaşılacaktır.
+              </span>
             </p>
             <p className="text-sm text-gray-500">
-              Şimdilik formlar için bizimle iletişime geçebilirsiniz.
+              <span className={missingClass}>
+                Şimdilik formlar için bizimle iletişime geçebilirsiniz.
+              </span>
             </p>
           </div>
         </div>

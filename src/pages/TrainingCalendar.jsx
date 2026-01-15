@@ -3,6 +3,7 @@ import { motion } from 'framer-motion'
 import { useState } from 'react'
 
 const TrainingCalendar = () => {
+  const missingClass = 'bg-red-100 text-red-700 px-2 py-0.5 rounded'
   const [selectedDay, setSelectedDay] = useState('monday')
   const [selectedGroup, setSelectedGroup] = useState('all')
   
@@ -281,9 +282,9 @@ const TrainingCalendar = () => {
                 Bireysel veya küçük grup antrenmanları için özel ders programları
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Bireysel antrenman: Bilgi için iletişime geçiniz</li>
-                <li>• 2-3 kişilik grup: Bilgi için iletişime geçiniz</li>
-                <li>• Aile paketi: Bilgi için iletişime geçiniz</li>
+                <li className={missingClass}>• Bireysel antrenman: Bilgi için iletişime geçiniz</li>
+                <li className={missingClass}>• 2-3 kişilik grup: Bilgi için iletişime geçiniz</li>
+                <li className={missingClass}>• Aile paketi: Bilgi için iletişime geçiniz</li>
               </ul>
             </motion.div>
 

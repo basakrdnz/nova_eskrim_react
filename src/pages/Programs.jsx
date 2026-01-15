@@ -1,10 +1,7 @@
 import { Link } from 'react-router-dom'
-import { Users, Calendar, Target, Award, Clock, Star } from 'lucide-react'
+import { Users, Calendar, Award, Clock, Star } from 'lucide-react'
 
 const Programs = () => {
-  const missingClass = 'bg-red-100 text-red-700 px-2 py-0.5 rounded'
-  const isMissing = (value) => value.includes('Bilgi için iletişime geçiniz')
-
   const programs = [
     {
       id: 1,
@@ -13,7 +10,6 @@ const Programs = () => {
       duration: '3-6 ay',
       frequency: 'Haftada 2 gün',
       ageGroup: '7-12 yaş',
-      price: 'Bilgi için iletişime geçiniz',
       features: [
         'Temel eskrim teknikleri',
         'Güvenlik eğitimi',
@@ -31,7 +27,6 @@ const Programs = () => {
       duration: '6-12 ay',
       frequency: 'Haftada 3-4 gün',
       ageGroup: '13-18 yaş',
-      price: 'Bilgi için iletişime geçiniz',
       features: [
         'İleri teknik eğitimi',
         'Yarışma stratejileri',
@@ -49,7 +44,6 @@ const Programs = () => {
       duration: '12+ ay',
       frequency: 'Haftada 5-6 gün',
       ageGroup: '16+ yaş',
-      price: 'Bilgi için iletişime geçiniz',
       features: [
         'Özel antrenman planı',
         'Uluslararası yarışma hazırlığı',
@@ -67,7 +61,6 @@ const Programs = () => {
       duration: 'Sürekli',
       frequency: 'Haftada 2-3 gün',
       ageGroup: '18+ yaş',
-      price: 'Bilgi için iletişime geçiniz',
       features: [
         'Temel ve orta seviye teknikler',
         'Esnek program',
@@ -85,7 +78,6 @@ const Programs = () => {
       duration: '6-12 ay',
       frequency: 'Haftada 2 gün',
       ageGroup: '5-8 yaş',
-      price: 'Bilgi için iletişime geçiniz',
       features: [
         'Oyun temelli eğitim',
         'Koordinasyon geliştirme',
@@ -103,7 +95,6 @@ const Programs = () => {
       duration: '3-6 ay',
       frequency: 'Haftada 4-5 gün',
       ageGroup: '14+ yaş',
-      price: 'Bilgi için iletişime geçiniz',
       features: [
         'Hedef yarışmaya özel antrenman',
         'Yoğun teknik çalışma',
@@ -160,15 +151,6 @@ const Programs = () => {
                     <div className="flex items-center text-sm text-gray-600">
                       <Users className="w-4 h-4 mr-2" />
                       <span>Yaş Grubu: {program.ageGroup}</span>
-                    </div>
-                    <div className="flex items-center text-sm text-gray-600">
-                      <Target className="w-4 h-4 mr-2" />
-                      <span>
-                        Ücret:{' '}
-                        <span className={isMissing(program.price) ? missingClass : undefined}>
-                          {program.price}
-                        </span>
-                      </span>
                     </div>
                   </div>
 
@@ -252,18 +234,6 @@ const Programs = () => {
                   <td className="px-6 py-4 text-center">Gelişmiş</td>
                   <td className="px-6 py-4 text-center">Özel</td>
                 </tr>
-                <tr className="bg-gray-50">
-                  <td className="px-6 py-4 font-medium">Aylık Ücret</td>
-                  <td className="px-6 py-4 text-center font-semibold">
-                    <span className={missingClass}>Bilgi için iletişime geçiniz</span>
-                  </td>
-                  <td className="px-6 py-4 text-center font-semibold">
-                    <span className={missingClass}>Bilgi için iletişime geçiniz</span>
-                  </td>
-                  <td className="px-6 py-4 text-center font-semibold">
-                    <span className={missingClass}>Bilgi için iletişime geçiniz</span>
-                  </td>
-                </tr>
               </tbody>
             </table>
           </div>
@@ -322,20 +292,11 @@ const Programs = () => {
 
               <div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-4">Özel Dersler</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Bireysel</span>
-                    <span className={`font-medium ${missingClass}`}>Bilgi için iletişime geçiniz</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Grup (2-3 kişi)</span>
-                    <span className={`font-medium ${missingClass}`}>Bilgi için iletişime geçiniz</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span className="text-gray-600">Aile Paketi</span>
-                    <span className={`font-medium ${missingClass}`}>Bilgi için iletişime geçiniz</span>
-                  </div>
-                </div>
+                <ul className="space-y-2 text-sm text-gray-600">
+                  <li>• Bireysel</li>
+                  <li>• Grup (2-3 kişi)</li>
+                  <li>• Aile Paketi</li>
+                </ul>
               </div>
             </div>
 

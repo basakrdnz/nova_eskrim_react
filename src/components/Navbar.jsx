@@ -163,8 +163,6 @@ const Navbar = () => {
                   <div>
                     <button
                       onClick={() => toggleDropdown(index)}
-                      onMouseEnter={() => handleMouseEnter(index)}
-                      onMouseLeave={handleMouseLeave}
                       className={`w-full text-left px-3 py-2 text-base font-medium rounded-md ${
                         item.current ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
                       }`}

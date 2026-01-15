@@ -1,6 +1,7 @@
 import { ExternalLink, Globe, Calendar, Users } from 'lucide-react'
 
 const TurkishFencingFed = () => {
+  const missingClass = 'bg-red-100 text-red-700 px-2 py-0.5 rounded'
   return (
     <div>
       {/* Hero Section */}
@@ -87,22 +88,53 @@ const TurkishFencingFed = () => {
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Federasyonun klasman faaliyet takvimi, haberler ve duyuruları
-              yakında buradan takip edilebilecek.
+              <span className={missingClass}> yakında buradan takip edilebilecek.</span>
             </p>
           </div>
-          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-            <p className="text-gray-600 mb-4">
-              Şimdilik güncel içerikler için federasyonun resmi web sitesini ziyaret edebilirsiniz.
+          <div className="bg-white rounded-xl shadow-lg p-8">
+            <p className="text-gray-600 mb-6 text-center">
+              <span className={missingClass}>
+                Entegrasyon tamamlanana kadar aşağıdaki sayfalar federasyon sitesinden takip edilebilir.
+              </span>
             </p>
-            <a
-              href="https://eskrim.org.tr"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-primary inline-flex items-center"
-            >
-              <ExternalLink className="mr-2 w-4 h-4" />
-              Federasyon Web Sitesi
-            </a>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              <a
+                href="https://www.eskrim.org.tr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 hover:bg-gray-50"
+              >
+                <span className="text-gray-700 font-medium">Haberler</span>
+                <ExternalLink className="w-4 h-4 text-gray-500" />
+              </a>
+              <a
+                href="https://www.eskrim.org.tr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 hover:bg-gray-50"
+              >
+                <span className="text-gray-700 font-medium">Duyurular</span>
+                <ExternalLink className="w-4 h-4 text-gray-500" />
+              </a>
+              <a
+                href="https://www.eskrim.org.tr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 hover:bg-gray-50"
+              >
+                <span className="text-gray-700 font-medium">Faaliyet Takvimi</span>
+                <ExternalLink className="w-4 h-4 text-gray-500" />
+              </a>
+              <a
+                href="https://www.eskrim.org.tr"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center justify-between rounded-lg border border-gray-200 px-4 py-3 hover:bg-gray-50"
+              >
+                <span className="text-gray-700 font-medium">Klasmanlar</span>
+                <ExternalLink className="w-4 h-4 text-gray-500" />
+              </a>
+            </div>
           </div>
         </div>
       </section>

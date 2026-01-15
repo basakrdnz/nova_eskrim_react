@@ -1,6 +1,7 @@
 import { Calendar, MapPin, Users, Award, Star } from 'lucide-react'
 
 const SummerCamp = () => {
+  const missingClass = 'bg-red-100 text-red-700 px-2 py-0.5 rounded'
   return (
     <div>
       {/* Hero Section */}
@@ -45,19 +46,19 @@ const SummerCamp = () => {
                   <h3 className="text-2xl font-bold mb-4">Kamp Bilgileri</h3>
                   <div className="grid grid-cols-2 gap-6">
                     <div>
-                      <div className="text-3xl font-bold">Yakında</div>
+                      <div className={`text-3xl font-bold ${missingClass}`}>Yakında</div>
                       <div className="text-sm">Hafta</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold">Yakında</div>
+                      <div className={`text-3xl font-bold ${missingClass}`}>Yakında</div>
                       <div className="text-sm">Gün/Hafta</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold">Yakında</div>
+                      <div className={`text-3xl font-bold ${missingClass}`}>Yakında</div>
                       <div className="text-sm">Saat/Gün</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold">Yakında</div>
+                      <div className={`text-3xl font-bold ${missingClass}`}>Yakında</div>
                       <div className="text-sm">Kontenjan</div>
                     </div>
                   </div>
@@ -169,7 +170,7 @@ const SummerCamp = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Tarih</h3>
-                    <p className="text-gray-600">Bilgi için iletişime geçiniz</p>
+                    <p className={`text-gray-600 ${missingClass}`}>Bilgi için iletişime geçiniz</p>
                   </div>
                 </div>
 
@@ -189,7 +190,7 @@ const SummerCamp = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Yaş Grubu</h3>
-                    <p className="text-gray-600">Bilgi için iletişime geçiniz</p>
+                    <p className={`text-gray-600 ${missingClass}`}>Bilgi için iletişime geçiniz</p>
                   </div>
                 </div>
 
@@ -199,7 +200,7 @@ const SummerCamp = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Ücret</h3>
-                    <p className="text-gray-600">Bilgi için iletişime geçiniz</p>
+                    <p className={`text-gray-600 ${missingClass}`}>Bilgi için iletişime geçiniz</p>
                   </div>
                 </div>
               </div>

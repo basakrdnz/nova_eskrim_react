@@ -1,4 +1,5 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
+import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Home from './pages/Home'
@@ -18,9 +19,37 @@ import Medals from './pages/Medals'
 import Achievements from './pages/Achievements'
 import Contact from './pages/Contact'
 
+const ScrollToTopAndLoading = () => {
+  const location = useLocation()
+  const [isLoading, setIsLoading] = useState(false)
+
+  useEffect(() => {
+    setIsLoading(true)
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
+    const timeoutId = setTimeout(() => setIsLoading(false), 250)
+    return () => clearTimeout(timeoutId)
+  }, [location.pathname])
+
+  if (!isLoading) return null
+
+  return (
+    <div
+      className="fixed inset-0 z-50 flex items-center justify-center bg-white/70 backdrop-blur-sm"
+      aria-live="polite"
+      aria-label="Sayfa yükleniyor"
+    >
+      <div className="flex items-center space-x-3">
+        <div className="h-8 w-8 animate-spin rounded-full border-4 border-primary-600 border-t-transparent" />
+        <span className="text-primary-700 font-medium">Yükleniyor...</span>
+      </div>
+    </div>
+  )
+}
+
 function App() {
   return (
     <Router>
+      <ScrollToTopAndLoading />
       <div className="min-h-screen flex flex-col">
         <Navbar />
         <main className="flex-grow">
