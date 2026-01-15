@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Send } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, Instagram, Globe } from 'lucide-react'
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -162,9 +162,10 @@ const Contact = () => {
                       Adres
                     </h3>
                     <p className="text-gray-600">
-                      Nova Eskrim Kulübü<br />
-                      Spor Caddesi No: 123<br />
-                      Beşiktaş / İstanbul
+                      Şehit Osman Avcı Mah.<br />
+                      Malazgirt 1071 Cad.<br />
+                      Relax Göksü Sit. 51D/A<br />
+                      6820 Ankara/Etimesgut
                     </p>
                   </div>
                 </div>
@@ -178,11 +179,8 @@ const Contact = () => {
                       Telefon
                     </h3>
                     <p className="text-gray-600">
-                      <a href="tel:+902121234567" className="hover:text-primary-600">
-                        +90 212 123 45 67
-                      </a><br />
-                      <a href="tel:+905551234567" className="hover:text-primary-600">
-                        +90 555 123 45 67
+                      <a href="tel:+905461900426" className="hover:text-primary-600">
+                        +90 546 190 04 26
                       </a>
                     </p>
                   </div>
@@ -197,11 +195,8 @@ const Contact = () => {
                       E-posta
                     </h3>
                     <p className="text-gray-600">
-                      <a href="mailto:info@novaeskrim.com" className="hover:text-primary-600">
-                        info@novaeskrim.com
-                      </a><br />
-                      <a href="mailto:egitim@novaeskrim.com" className="hover:text-primary-600">
-                        egitim@novaeskrim.com
+                      <a href="mailto:novaeskrim@gmail.com" className="hover:text-primary-600">
+                        novaeskrim@gmail.com
                       </a>
                     </p>
                   </div>
@@ -216,9 +211,37 @@ const Contact = () => {
                       Çalışma Saatleri
                     </h3>
                     <p className="text-gray-600">
-                      Pazartesi - Cuma: 09:00 - 22:00<br />
-                      Cumartesi: 09:00 - 18:00<br />
-                      Pazar: 10:00 - 16:00
+                      Bilgi ve ders saatleri için lütfen iletişime geçiniz.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="flex items-start">
+                  <div className="w-12 h-12 bg-primary-100 rounded-full flex items-center justify-center mr-4">
+                    <Instagram className="w-6 h-6 text-primary-600" />
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                      Sosyal Medya
+                    </h3>
+                    <p className="text-gray-600">
+                      <a
+                        href="https://www.instagram.com/novaeskrim"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary-600"
+                      >
+                        Instagram: novaeskrim
+                      </a>
+                      <br />
+                      <a
+                        href="https://www.tiktok.com/@nova-eskrim"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:text-primary-600"
+                      >
+                        TikTok: nova-eskrim
+                      </a>
                     </p>
                   </div>
                 </div>
@@ -232,12 +255,37 @@ const Contact = () => {
                 <div className="bg-gray-200 rounded-lg h-64 flex items-center justify-center">
                   <div className="text-center">
                     <MapPin className="w-12 h-12 text-gray-400 mx-auto mb-2" />
-                    <p className="text-gray-500">Harita burada görüntülenecek</p>
-                    <p className="text-sm text-gray-400">Google Maps entegrasyonu</p>
+                    <p className="text-gray-500">Haritayı Google Maps'te açın</p>
+                    <a
+                      href="https://maps.app.goo.gl/jkf1z5EXeLUvCgVXA?g_st=iw"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex items-center text-sm text-primary-600 hover:text-primary-700 mt-2"
+                    >
+                      <Globe className="w-4 h-4 mr-2" />
+                      Haritayı Aç
+                    </a>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Online Forms */}
+      <section className="py-12">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-white rounded-xl p-8 shadow-lg">
+            <h2 className="text-2xl font-bold text-gray-900 mb-3">
+              Online Formlar
+            </h2>
+            <p className="text-gray-600 mb-4">
+              Sporcu tanıma formu ve KVKK formu yakında paylaşılacaktır.
+            </p>
+            <p className="text-sm text-gray-500">
+              Şimdilik formlar için bizimle iletişime geçebilirsiniz.
+            </p>
           </div>
         </div>
       </section>
@@ -255,45 +303,53 @@ const Contact = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Kaç yaşından itibaren eskrim yapılabilir?
-              </h3>
-              <p className="text-gray-600">
-                7 yaşından itibaren eskrim sporuna başlayabilirsiniz. 
-                Çocuklar için özel programlarımız mevcuttur.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Hangi ekipmanlar gerekli?
-              </h3>
-              <p className="text-gray-600">
-                Başlangıçta kulübümüz temel ekipmanları sağlar. 
-                İlerleyen süreçte kendi ekipmanlarınızı edinebilirsiniz.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Haftada kaç gün antrenman yapılıyor?
-              </h3>
-              <p className="text-gray-600">
-                Seviyenize göre haftada 2-4 gün antrenman yapabilirsiniz. 
-                Programlar esnek olarak düzenlenir.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-lg">
-              <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                Yarışmalara katılım nasıl oluyor?
-              </h3>
-              <p className="text-gray-600">
-                Deneyimli sporcularımız ulusal ve uluslararası yarışmalara 
-                katılır. Kulübümüz tüm organizasyonu üstlenir.
-              </p>
-            </div>
+            {[
+              {
+                question: 'Eskrimde hiç tecrübem yok, başlayabilir miyim?',
+                answer: 'Evet, kesinlikle. Eskrim eğitimlerimiz, hiç tecrübesi olmayan sporcular için temel seviyeden başlayacak şekilde planlanmaktadır. Her sporcu kendi seviyesine uygun gruplarda eğitim alır.'
+              },
+              {
+                question: 'Ekipmanımı kendim mi almalıyım?',
+                answer: 'Kulübümüz, başlangıç seviyesindeki sporcular için ekipman desteği sunmaktadır. Yarışmacı seviyeye geçen sporcular veya kendi tercihi doğrultusunda isteyen sporcular, kişisel ekipmanlarını kendileri temin edebilirler.'
+              },
+              {
+                question: 'Kaç yaşından itibaren eskrime başlayabilirim?',
+                answer: 'Sporcunun fiziksel ve zihinsel gelişimi değerlendirilerek, en erken 7 yaş itibarıyla eskrime başlanması uygundur.'
+              },
+              {
+                question: 'Haftada kaç gün antrenman yapıyorsunuz?',
+                answer: 'Antrenman sıklığı, sporcunun yaşı ve seviyesine göre değişmektedir. Haftada 3, 4 veya 5 gün antrenman programları uygulanmaktadır.'
+              },
+              {
+                question: 'Yarışmalara katılmak zorunlu mu?',
+                answer: 'Hayır, kesinlikle zorunlu değildir. Sporcularımız eskrimi hobi amaçlı yapabilir. Yarışmalara katılım, sporcunun isteği ve hazır oluş düzeyine göre planlanır.'
+              },
+              {
+                question: 'Antrenmanlar grup mu, bireysel mi yapılıyor?',
+                answer: 'Antrenmanlarımız ağırlıklı olarak grup çalışmaları şeklindedir. Gelişim ihtiyacına göre özel ders imkânı da sunulmaktadır.'
+              },
+              {
+                question: 'Eskrim çocuğum için güvenli bir spor mu?',
+                answer: 'Evet. Eskrim, koruyucu ekipmanlar ve kontrollü antrenman ortamı sayesinde güvenli bir spor branşıdır. Tüm antrenmanlar uzman antrenörler eşliğinde yapılır.'
+              },
+              {
+                question: 'Deneme antrenmanı yapabilir miyiz?',
+                answer: 'Evet, kulübümüzde deneme antrenmanı imkânı bulunmaktadır. Böylece sporcu ve veliler, eskrimi ve antrenman ortamını yakından tanıyabilir.'
+              },
+              {
+                question: 'Eskrim çocuğuma ne kazandırır?',
+                answer: 'Eskrim; disiplin, odaklanma, özgüven, beden koordinasyonu ve karakter gelişimine önemli katkı sağlar.'
+              }
+            ].map((item) => (
+              <div key={item.question} className="bg-white rounded-xl p-6 shadow-lg">
+                <h3 className="text-lg font-semibold text-gray-900 mb-3">
+                  {item.question}
+                </h3>
+                <p className="text-gray-600">
+                  {item.answer}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>

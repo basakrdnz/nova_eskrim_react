@@ -77,6 +77,35 @@ const TurkishFencingFed = () => {
           </div>
         </div>
       </section>
+
+      {/* News & Calendar */}
+      <section className="py-16 lg:py-24 bg-gray-50">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+              Haberler ve Duyurular
+            </h2>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Federasyonun klasman faaliyet takvimi, haberler ve duyuruları
+              yakında buradan takip edilebilecek.
+            </p>
+          </div>
+          <div className="bg-white rounded-xl shadow-lg p-8 text-center">
+            <p className="text-gray-600 mb-4">
+              Şimdilik güncel içerikler için federasyonun resmi web sitesini ziyaret edebilirsiniz.
+            </p>
+            <a
+              href="https://eskrim.org.tr"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-primary inline-flex items-center"
+            >
+              <ExternalLink className="mr-2 w-4 h-4" />
+              Federasyon Web Sitesi
+            </a>
+          </div>
+        </div>
+      </section>
     </div>
   )
 }

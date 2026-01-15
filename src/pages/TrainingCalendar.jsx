@@ -8,38 +8,38 @@ const TrainingCalendar = () => {
   
   const schedule = {
     monday: [
-      { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Ahmet Yılmaz', location: 'Salon A' },
-      { time: '16:00 - 18:00', group: 'Çocuk Grubu (7-10)', coach: 'Ayşe Demir', location: 'Salon B' },
-      { time: '19:00 - 21:00', group: 'Gelişmiş Seviye', coach: 'Mehmet Kaya', location: 'Salon A' }
+      { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '16:00 - 18:00', group: 'Çocuk Grubu (7-10)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '19:00 - 21:00', group: 'Gelişmiş Seviye', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     tuesday: [
-      { time: '10:00 - 12:00', group: 'Yetişkin Orta', coach: 'Zeynep Özkan', location: 'Salon A' },
-      { time: '17:00 - 19:00', group: 'Çocuk Grubu (11-14)', coach: 'Ayşe Demir', location: 'Salon B' },
-      { time: '20:00 - 22:00', group: 'Elite Program', coach: 'Ahmet Yılmaz', location: 'Salon A' }
+      { time: '10:00 - 12:00', group: 'Yetişkin Orta', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '17:00 - 19:00', group: 'Çocuk Grubu (11-14)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '20:00 - 22:00', group: 'Elite Program', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     wednesday: [
-      { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Ahmet Yılmaz', location: 'Salon A' },
-      { time: '16:00 - 18:00', group: 'Çocuk Grubu (7-10)', coach: 'Ayşe Demir', location: 'Salon B' },
-      { time: '19:00 - 21:00', group: 'Yarışma Hazırlık', coach: 'Mehmet Kaya', location: 'Salon A' }
+      { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '16:00 - 18:00', group: 'Çocuk Grubu (7-10)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '19:00 - 21:00', group: 'Yarışma Hazırlık', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     thursday: [
-      { time: '10:00 - 12:00', group: 'Yetişkin Orta', coach: 'Zeynep Özkan', location: 'Salon A' },
-      { time: '17:00 - 19:00', group: 'Çocuk Grubu (11-14)', coach: 'Ayşe Demir', location: 'Salon B' },
-      { time: '20:00 - 22:00', group: 'Elite Program', coach: 'Ahmet Yılmaz', location: 'Salon A' }
+      { time: '10:00 - 12:00', group: 'Yetişkin Orta', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '17:00 - 19:00', group: 'Çocuk Grubu (11-14)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '20:00 - 22:00', group: 'Elite Program', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     friday: [
-      { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Ahmet Yılmaz', location: 'Salon A' },
-      { time: '16:00 - 18:00', group: 'Çocuk Grubu (7-10)', coach: 'Ayşe Demir', location: 'Salon B' },
-      { time: '19:00 - 21:00', group: 'Gelişmiş Seviye', coach: 'Mehmet Kaya', location: 'Salon A' }
+      { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '16:00 - 18:00', group: 'Çocuk Grubu (7-10)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '19:00 - 21:00', group: 'Gelişmiş Seviye', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     saturday: [
-      { time: '10:00 - 12:00', group: 'Başlangıç Programı', coach: 'Ayşe Demir', location: 'Salon A' },
-      { time: '14:00 - 16:00', group: 'Elite Program', coach: 'Ahmet Yılmaz', location: 'Salon A' },
-      { time: '16:00 - 18:00', group: 'Yarışma Hazırlık', coach: 'Mehmet Kaya', location: 'Salon B' }
+      { time: '10:00 - 12:00', group: 'Başlangıç Programı', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '14:00 - 16:00', group: 'Elite Program', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '16:00 - 18:00', group: 'Yarışma Hazırlık', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     sunday: [
-      { time: '10:00 - 12:00', group: 'Aile Programı', coach: 'Ayşe Demir', location: 'Salon A' },
-      { time: '14:00 - 16:00', group: 'Özel Dersler', coach: 'Tüm Antrenörler', location: 'Salon A/B' }
+      { time: '10:00 - 12:00', group: 'Aile Programı', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '14:00 - 16:00', group: 'Özel Dersler', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ]
   }
 
@@ -80,7 +80,7 @@ const TrainingCalendar = () => {
             Antrenman Takvimi
           </h1>
           <p className="text-xl lg:text-2xl text-primary-100 max-w-3xl mx-auto">
-            Haftalık antrenman programımızı inceleyin ve size uygun saati seçin
+            Bilgi ve ders saatleri için lütfen iletişime geçiniz.
           </p>
         </div>
       </section>
@@ -281,9 +281,9 @@ const TrainingCalendar = () => {
                 Bireysel veya küçük grup antrenmanları için özel ders programları
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Bireysel antrenman: ₺200/saat</li>
-                <li>• 2-3 kişilik grup: ₺150/saat</li>
-                <li>• Aile paketi: ₺300/saat</li>
+                <li>• Bireysel antrenman: Bilgi için iletişime geçiniz</li>
+                <li>• 2-3 kişilik grup: Bilgi için iletişime geçiniz</li>
+                <li>• Aile paketi: Bilgi için iletişime geçiniz</li>
               </ul>
             </motion.div>
 

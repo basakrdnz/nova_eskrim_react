@@ -5,22 +5,40 @@ const Coaches = () => {
   const coaches = [
     {
       id: 1,
-      name: 'Ahmet Yılmaz',
+      name: 'Halim Şener',
       title: 'Baş Antrenör',
       image: '/nova_coach.jpg',
-      experience: '15+ yıl',
-      specialties: ['Epee', 'Foil', 'Sabre'],
-      description: '15 yılı aşkın deneyimiyle Nova Eskrim\'in baş antrenörü. Tüm eskrim branşlarında uzman ve uluslararası sertifikalara sahip.'
+      experience: '+25 sene',
+      specialties: ['Epe', 'Flöre', 'Kılıç'],
+      description: '50 yılı aşkın sporculuk, hakemlik ve antrenörlük geçmişiyle kulübümüzün teknik yapılanmasına liderlik eder. 1992 Barselona Olimpiyatları\'nda eskrim branşında Türkiye\'yi temsil eden ilk Türk hakemdir.'
     },
     {
       id: 2,
-      name: 'Ayşe Demir',
-      title: 'Kıdemli Antrenör',
+      name: 'Volkan Şener',
+      title: 'Antrenör',
       image: '/nova_coach.jpg',
-      experience: '10+ yıl',
-      specialties: ['Foil', 'Çocuk Gelişimi'],
-      description: 'Çocuk gelişimi konusunda uzmanlaşmış, başlangıç seviyesi sporcuların eğitiminde deneyimli antrenör.'
+      experience: '10+ yıl sporculuk',
+      specialties: ['Kılıç', 'Yarışma hazırlığı', 'Disiplinli çalışma'],
+      description: 'Avrupa ve Dünya Şampiyonaları\'na katılım sağlamış, farklı yaş kategorilerinde Türkiye dereceleri elde etmiştir. 3 yıl hakemlik yaptıktan sonra 2015\'ten bu yana antrenörlük görevini sürdürmektedir.'
     },
+    {
+      id: 3,
+      name: 'Adil Aytaç',
+      title: 'Antrenör',
+      image: '/nova_coach.jpg',
+      experience: '7 yıl hakemlik',
+      specialties: ['Teknik temel', 'Disiplin', 'Uzun vadeli gelişim'],
+      description: 'Milli sporcu geçmişinin ardından 7 yıl hakemlik yapmış, son 5 yıldır aktif antrenörlük görevini sürdürmektedir. Sporcuların teknik temelini ve disiplinli çalışma alışkanlığını güçlendirmeyi hedefler.'
+    },
+    {
+      id: 4,
+      name: 'Dilan',
+      title: 'Spor Psikoloğu',
+      image: '/nova_coach.jpg',
+      experience: 'Spor psikoloğu',
+      specialties: ['Odaklanma', 'Motivasyon', 'Performans'],
+      description: 'Sporcuların zihinsel dayanıklılık, odaklanma ve performans süreçlerine destek sağlar.'
+    }
 
   ]
 

@@ -10,7 +10,7 @@ const Groups = () => {
       ageRange: '5-8 yaş',
       level: 'Başlangıç',
       schedule: 'Haftada 2 gün',
-      coach: 'Ayşe Demir',
+      coach: 'Nova Eskrim Antrenörleri',
       features: ['Oyun temelli eğitim', 'Koordinasyon geliştirme', 'Güvenlik odaklı'],
       icon: Users,
       color: 'from-blue-500 to-blue-600'
@@ -22,7 +22,7 @@ const Groups = () => {
       ageRange: '9-12 yaş',
       level: 'Başlangıç-Orta',
       schedule: 'Haftada 2-3 gün',
-      coach: 'Ayşe Demir',
+      coach: 'Nova Eskrim Antrenörleri',
       features: ['Temel teknikler', 'Grup antrenmanları', 'Yarışma hazırlığı'],
       icon: Target,
       color: 'from-green-500 to-green-600'
@@ -34,7 +34,7 @@ const Groups = () => {
       ageRange: '13-16 yaş',
       level: 'Orta-Gelişmiş',
       schedule: 'Haftada 3-4 gün',
-      coach: 'Mehmet Kaya',
+      coach: 'Nova Eskrim Antrenörleri',
       features: ['İleri teknikler', 'Yarışma stratejileri', 'Fiziksel hazırlık'],
       icon: Award,
       color: 'from-purple-500 to-purple-600'

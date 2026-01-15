@@ -1,6 +1,27 @@
-import { Award, Trophy, Star, Target } from 'lucide-react'
-
 const Achievements = () => {
+  const achievements = [
+    {
+      id: 1,
+      date: '2025 Aralık',
+      title: 'U10 Erkek Kılıç – Türkiye Şampiyonası 2.’liği'
+    },
+    {
+      id: 2,
+      date: '2025 Aralık',
+      title: 'U12 Erkek Kılıç – Okullar Arası Ankara 3.’lüğü'
+    },
+    {
+      id: 3,
+      date: '2025 Aralık',
+      title: 'Yıldızlar Erkek Kılıç – Okullar Arası Ankara 3.’lüğü'
+    },
+    {
+      id: 4,
+      date: '2025 Aralık',
+      title: 'U12 Erkek Kılıç – Türkiye Şampiyonası 3.’lüğü'
+    }
+  ]
+
   return (
     <div>
       {/* Hero Section */}
@@ -10,8 +31,8 @@ const Achievements = () => {
             Derecelerimiz
           </h1>
           <p className="text-xl lg:text-2xl text-primary-100 max-w-3xl mx-auto">
-            Nova Eskrim Kulübü sporcularının ulusal ve uluslararası 
-            yarışmalarda elde ettiği dereceler ve başarılar
+            Nova Eskrim Spor Kulübü sporcularının ulusal yarışmalarda
+            elde ettiği dereceler
           </p>
         </div>
       </section>
@@ -28,11 +49,17 @@ const Achievements = () => {
             </p>
           </div>
 
-          <div className="bg-white rounded-xl shadow-lg p-8">
-            <p className="text-gray-600 text-center">
-              Bu sayfa yakında güncellenecektir. Detaylı derece bilgileri için 
-              lütfen bizimle iletişime geçin.
-            </p>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {achievements.map((achievement) => (
+              <div key={achievement.id} className="bg-white rounded-xl shadow-lg p-6">
+                <div className="text-sm text-primary-600 font-semibold mb-2">
+                  {achievement.date}
+                </div>
+                <h3 className="text-lg font-semibold text-gray-900">
+                  {achievement.title}
+                </h3>
+              </div>
+            ))}
           </div>
         </div>
       </section>

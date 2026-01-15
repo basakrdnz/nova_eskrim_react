@@ -72,9 +72,9 @@ const Home = () => {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 1, delay: 0.6 }}
             >
-              Türkiye'nin önde gelen eskrim kulüplerinden biri.
+              Bugünün disiplini, yarının başarısı.
               <br className="hidden md:block" />
-              Profesyonel antrenörler, modern tesisler ve kapsamlı programlarla eskrim sporunu öğrenin.
+              Güvenli ve aile ortamında, her yaş grubuna uygun eskrim eğitimi.
             </motion.p>
 
             {/* CTA Buttons */}
@@ -101,9 +101,12 @@ const Home = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <button className="bg-white/10 backdrop-blur-sm hover:bg-white/20 text-white font-semibold py-4 px-8 rounded-full inline-flex items-center justify-center text-lg transition-all duration-300 border border-white/20">
+                <button
+                  className="bg-red-500/30 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full inline-flex items-center justify-center text-lg transition-all duration-300 border border-red-300/40 cursor-not-allowed"
+                  aria-disabled="true"
+                >
                   <Play className="mr-2 w-5 h-5" />
-                  Tanıtım Videosu
+                  Tanıtım Videosu (Yakında)
                 </button>
               </motion.div>
             </motion.div>

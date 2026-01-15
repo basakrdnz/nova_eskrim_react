@@ -7,7 +7,7 @@ const WinterCamp = () => {
       <section className="bg-gradient-to-r from-blue-600 to-indigo-600 text-white py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h1 className="text-4xl lg:text-5xl font-bold mb-6">
-            Kış Kampı 2024
+            Kış Kampı
           </h1>
           <p className="text-xl lg:text-2xl text-blue-100 max-w-3xl mx-auto">
             Kış aylarında yoğun antrenman programımızla eskrim becerilerinizi 
@@ -44,20 +44,20 @@ const WinterCamp = () => {
                   <h3 className="text-2xl font-bold mb-4">Kamp Bilgileri</h3>
                   <div className="grid grid-cols-2 gap-6">
                     <div>
-                      <div className="text-3xl font-bold">1</div>
+                      <div className="text-3xl font-bold">Yakında</div>
                       <div className="text-sm">Hafta</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold">6</div>
+                      <div className="text-3xl font-bold">Yakında</div>
                       <div className="text-sm">Gün/Hafta</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold">5</div>
+                      <div className="text-3xl font-bold">Yakında</div>
                       <div className="text-sm">Saat/Gün</div>
                     </div>
                     <div>
-                      <div className="text-3xl font-bold">15</div>
-                      <div className="text-sm">Katılımcı</div>
+                      <div className="text-3xl font-bold">Yakında</div>
+                      <div className="text-sm">Kontenjan</div>
                     </div>
                   </div>
                 </div>
@@ -168,7 +168,7 @@ const WinterCamp = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Tarih</h3>
-                    <p className="text-gray-600">15-21 Ocak 2024</p>
+                    <p className="text-gray-600">Bilgi için iletişime geçiniz</p>
                   </div>
                 </div>
 
@@ -178,7 +178,7 @@ const WinterCamp = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Konum</h3>
-                    <p className="text-gray-600">Nova Eskrim Kulübü, İstanbul</p>
+                    <p className="text-gray-600">Nova Eskrim Spor Kulübü, Ankara</p>
                   </div>
                 </div>
 
@@ -188,7 +188,7 @@ const WinterCamp = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Yaş Grubu</h3>
-                    <p className="text-gray-600">12-18 yaş arası</p>
+                    <p className="text-gray-600">Bilgi için iletişime geçiniz</p>
                   </div>
                 </div>
 
@@ -198,7 +198,7 @@ const WinterCamp = () => {
                   </div>
                   <div>
                     <h3 className="font-semibold text-gray-900 mb-1">Ücret</h3>
-                    <p className="text-gray-600">₺1,800 (1 hafta)</p>
+                    <p className="text-gray-600">Bilgi için iletişime geçiniz</p>
                   </div>
                 </div>
               </div>
