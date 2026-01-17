@@ -59,37 +59,35 @@ const Achievements = () => {
             </p>
           </div>
 
-          <div className="relative">
-            <div className="absolute left-4 md:left-1/2 top-0 h-full w-px bg-primary-100 md:transform md:-translate-x-1/2" />
-            <div className="space-y-8">
-              {achievements.map((achievement, index) => (
-                <div
-                  key={achievement.id}
-                  className={`relative flex flex-col md:flex-row gap-6 ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                >
-                  <div className="md:w-1/2" />
-                  <div className="absolute left-4 md:left-1/2 top-6 w-3 h-3 rounded-full bg-primary-600 md:-translate-x-1/2" />
-                  <div className="bg-white rounded-2xl shadow-lg p-6 md:w-1/2">
-                    <div className="flex items-center text-sm text-primary-600 font-semibold mb-3">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      {achievement.date}
-                    </div>
-                    <h3 className="text-lg font-semibold text-gray-900 mb-2">
-                      {achievement.category}
-                    </h3>
-                    <p className="text-gray-600 mb-3">
-                      {achievement.event}
-                    </p>
-                    <div className="inline-flex items-center rounded-full bg-primary-50 text-primary-700 text-xs font-semibold px-3 py-1">
-                      <CheckCircle2 className="w-3 h-3 mr-2" />
-                      {achievement.placement}
-                    </div>
+          {/* Date Group Header */}
+          <div className="mb-8 text-center">
+            <div className="inline-flex items-center text-lg text-primary-600 font-semibold bg-primary-50 px-6 py-3 rounded-full">
+              <Calendar className="w-5 h-5 mr-2" />
+              {achievements[0]?.date}
+            </div>
+          </div>
+
+          {/* Achievements Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            {achievements.map((achievement) => (
+              <div
+                key={achievement.id}
+                className="bg-white rounded-2xl shadow-lg p-6 hover:shadow-xl transition-shadow border-l-4 border-primary-600"
+              >
+                <h3 className="text-lg font-semibold text-gray-900 mb-2">
+                  {achievement.category}
+                </h3>
+                <p className="text-gray-600 mb-4">
+                  {achievement.event}
+                </p>
+                <div className="flex items-center justify-between">
+                  <div className="inline-flex items-center rounded-full bg-primary-50 text-primary-700 text-sm font-semibold px-4 py-2">
+                    <CheckCircle2 className="w-4 h-4 mr-2" />
+                    {achievement.placement}
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </section>
