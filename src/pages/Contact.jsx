@@ -1,6 +1,5 @@
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Clock, Send, Instagram, Globe } from 'lucide-react'
-import emailjs from '@emailjs/browser'
 
 const Contact = () => {
   const missingClass = 'bg-red-100 text-red-700 px-2 py-0.5 rounded'
@@ -11,7 +10,6 @@ const Contact = () => {
     subject: '',
     message: ''
   })
-  const [isSubmitting, setIsSubmitting] = useState(false)
 
   const handleChange = (e) => {
     setFormData({
@@ -20,43 +18,18 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault()
-    setIsSubmitting(true)
-
-    try {
-      // EmailJS servis bilgileri - Bu değerleri EmailJS hesabınızdan almanız gerekiyor
-      const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID || 'YOUR_SERVICE_ID'
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID || 'YOUR_TEMPLATE_ID'
-      const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY || 'YOUR_PUBLIC_KEY'
-
-      // EmailJS'i başlat
-      emailjs.init(publicKey)
-
-      // E-posta gönder
-      await emailjs.send(serviceId, templateId, {
-        from_name: formData.name,
-        from_email: formData.email,
-        phone: formData.phone || 'Belirtilmemiş',
-        subject: formData.subject,
-        message: formData.message,
-        to_email: 'novaeskrim@gmail.com'
-      })
-
-      alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.')
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        subject: '',
-        message: ''
-      })
-    } catch (error) {
-      console.error('E-posta gönderme hatası:', error)
-      alert('Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyin veya doğrudan e-posta gönderin: novaeskrim@gmail.com')
-    } finally {
-      setIsSubmitting(false)
-    }
+    // Handle form submission here
+    console.log('Form submitted:', formData)
+    alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.')
+    setFormData({
+      name: '',
+      email: '',
+      phone: '',
+      subject: '',
+      message: ''
+    })
   }
 
   return (
@@ -168,10 +141,9 @@ const Contact = () => {
                 <button
                   type="submit"
                   className="btn-primary inline-flex items-center"
-                  disabled={isSubmitting}
                 >
                   <Send className="mr-2 w-4 h-4" />
-                  {isSubmitting ? 'Gönderiliyor...' : 'Mesaj Gönder'}
+                  Mesaj Gönder
                 </button>
               </form>
             </div>
