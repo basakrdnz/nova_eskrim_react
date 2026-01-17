@@ -72,8 +72,8 @@ const Coaches = () => {
                    whileHover={{ y: -5 }}
                  >
                    <div className="flex flex-col lg:flex-row">
-                                           {/* Coach Image */}
-                      <div className="relative lg:w-2/5 h-96 overflow-hidden">
+                                           {/* Coach Image - Hidden for now */}
+                      {/* <div className="relative lg:w-2/5 h-96 overflow-hidden">
                        <img 
                          src={coach.image} 
                          alt={coach.name}
@@ -88,10 +88,10 @@ const Coaches = () => {
                            {coach.title}
                          </p>
                        </div>
-                     </div>
+                     </div> */}
 
                      {/* Coach Info */}
-                     <div className="lg:w-3/5 p-6 flex flex-col justify-center">
+                     <div className="w-full p-6 flex flex-col justify-center">
                        <div className="mb-3">
                          <h3 className="text-xl lg:text-2xl font-bold text-gray-900 mb-1">
                            {coach.name}

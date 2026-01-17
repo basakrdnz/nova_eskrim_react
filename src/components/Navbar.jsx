@@ -14,8 +14,7 @@ const Navbar = () => {
       current: location.pathname === '/hakkimizda',
       dropdown: [
         { name: 'Nova Eskrim', href: '/' },
-        { name: 'Hocalar', href: '/hocalar' },
-        { name: 'Galeri', href: '/galeri' }
+        { name: 'Hocalar', href: '/hocalar' }
       ]
     },
     {
@@ -28,21 +27,11 @@ const Navbar = () => {
       ]
     },
     {
-      name: 'Kamplar',
-      href: '/kamplar',
-      current: location.pathname.includes('/kamp'),
-      dropdown: [
-        { name: 'Yaz Kampı', href: '/yaz-kampi' },
-        { name: 'Kış Kampı', href: '/kis-kampi' }
-      ]
-    },
-    {
       name: 'Kaynaklar',
       href: '/kaynaklar',
       current: location.pathname.includes('/kaynak'),
       dropdown: [
         { name: 'Fencing Time Live', href: '/fencing-time-live' },
-        { name: 'Türkiye Eskrim Fed.', href: '/turkiye-eskrim-federasyonu' },
         { name: 'Eskrim Bilgileri', href: '/eskrim-bilgileri' },
         { name: 'Kurallar & Videolar', href: '/kurallar-videolar' }
       ]
@@ -132,7 +121,7 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className={`${item.name === 'İletişim' ? 'btn-primary' : 'nav-link'} ${item.current ? 'nav-link-active' : ''}`}
+                    className={item.name === 'İletişim' ? 'btn-primary' : `nav-link ${item.current ? 'nav-link-active' : ''}`}
                   >
                     {item.name}
                   </Link>
