@@ -6,7 +6,7 @@ const TrainingCalendar = () => {
   const missingClass = 'bg-red-100 text-red-700 px-2 py-0.5 rounded'
   const [selectedDay, setSelectedDay] = useState('monday')
   const [selectedGroup, setSelectedGroup] = useState('all')
-  
+
   const schedule = {
     monday: [
       { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
@@ -90,7 +90,7 @@ const TrainingCalendar = () => {
       <section className="py-16 lg:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Day Selector */}
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center gap-2 mb-12"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -100,11 +100,10 @@ const TrainingCalendar = () => {
               <motion.button
                 key={day.key}
                 onClick={() => setSelectedDay(day.key)}
-                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${
-                  selectedDay === day.key
+                className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${selectedDay === day.key
                     ? `bg-gradient-to-r ${day.color} text-white shadow-lg scale-105`
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -115,7 +114,7 @@ const TrainingCalendar = () => {
           </motion.div>
 
           {/* Group Filter */}
-          <motion.div 
+          <motion.div
             className="flex flex-wrap justify-center gap-2 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -129,11 +128,10 @@ const TrainingCalendar = () => {
               <motion.button
                 key={group.key}
                 onClick={() => setSelectedGroup(group.key)}
-                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
-                  selectedGroup === group.key
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${selectedGroup === group.key
                     ? 'bg-primary-600 text-white shadow-md'
                     : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
-                }`}
+                  }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -180,34 +178,24 @@ const TrainingCalendar = () => {
                               <Clock className="w-5 h-5 mr-2" />
                               {session.time}
                             </div>
-                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                              getGroupType(session.group) === 'children' ? 'bg-blue-100 text-blue-700' :
-                              getGroupType(session.group) === 'elite' ? 'bg-purple-100 text-purple-700' :
-                              getGroupType(session.group) === 'special' ? 'bg-orange-100 text-orange-700' :
-                              'bg-green-100 text-green-700'
-                            }`}>
+                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${getGroupType(session.group) === 'children' ? 'bg-blue-100 text-blue-700' :
+                                getGroupType(session.group) === 'elite' ? 'bg-purple-100 text-purple-700' :
+                                  getGroupType(session.group) === 'special' ? 'bg-orange-100 text-orange-700' :
+                                    'bg-green-100 text-green-700'
+                              }`}>
                               {getGroupType(session.group) === 'children' ? 'Çocuk' :
-                               getGroupType(session.group) === 'elite' ? 'Elite' :
-                               getGroupType(session.group) === 'special' ? 'Özel' : 'Yetişkin'}
+                                getGroupType(session.group) === 'elite' ? 'Elite' :
+                                  getGroupType(session.group) === 'special' ? 'Özel' : 'Yetişkin'}
                             </span>
                           </div>
-                          
+
                           <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-600 transition-colors">
                             {session.group}
                           </h3>
-                          
-                          <div className="flex flex-col sm:flex-row sm:items-center gap-4 text-gray-600">
-                            <div className="flex items-center">
-                              <Users className="w-4 h-4 mr-2" />
-                              <span className="font-medium">{session.coach}</span>
-                            </div>
-                            <div className="flex items-center">
-                              <MapPin className="w-4 h-4 mr-2" />
-                              <span>{session.location}</span>
-                            </div>
-                          </div>
+
+                          {/* Removed coach and location as they are the same for all */}
                         </div>
-                        
+
                         <div className="mt-4 lg:mt-0 lg:ml-6">
                           <motion.button
                             className="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
@@ -244,7 +232,7 @@ const TrainingCalendar = () => {
       {/* Special Programs */}
       <section className="py-16 lg:py-24 bg-gray-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div 
+          <motion.div
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -260,7 +248,7 @@ const TrainingCalendar = () => {
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <motion.div 
+            <motion.div
               className="bg-white rounded-xl shadow-lg p-6 group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -268,7 +256,7 @@ const TrainingCalendar = () => {
               transition={{ duration: 0.6, delay: 0.1 }}
               whileHover={{ y: -5 }}
             >
-              <motion.div 
+              <motion.div
                 className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -288,7 +276,7 @@ const TrainingCalendar = () => {
               </ul>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="bg-white rounded-xl shadow-lg p-6 group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -296,7 +284,7 @@ const TrainingCalendar = () => {
               transition={{ duration: 0.6, delay: 0.2 }}
               whileHover={{ y: -5 }}
             >
-              <motion.div 
+              <motion.div
                 className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -316,7 +304,7 @@ const TrainingCalendar = () => {
               </ul>
             </motion.div>
 
-            <motion.div 
+            <motion.div
               className="bg-white rounded-xl shadow-lg p-6 group cursor-pointer"
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
@@ -324,7 +312,7 @@ const TrainingCalendar = () => {
               transition={{ duration: 0.6, delay: 0.3 }}
               whileHover={{ y: -5 }}
             >
-              <motion.div 
+              <motion.div
                 className="w-12 h-12 bg-primary-100 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary-200 transition-colors"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 transition={{ type: "spring", stiffness: 300 }}
@@ -389,15 +377,12 @@ const TrainingCalendar = () => {
             Size Uygun Saati Belirleyelim
           </h2>
           <p className="text-xl mb-8 text-primary-100 max-w-3xl mx-auto">
-            Antrenman programımız hakkında detaylı bilgi almak ve 
+            Antrenman programımız hakkında detaylı bilgi almak ve
             size uygun saati belirlemek için bizimle iletişime geçin
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a href="/iletisim" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
               İletişime Geç
-            </a>
-            <a href="/programlar" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-medium py-3 px-8 rounded-lg transition-colors">
-              Programları İncele
             </a>
           </div>
         </div>

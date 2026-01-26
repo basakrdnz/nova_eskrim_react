@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Award, Users, Calendar, Target, ArrowRight, Play } from 'lucide-react'
+import { Award, Users, Calendar, Target, ArrowRight, Camera } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const Home = () => {
@@ -37,7 +37,7 @@ const Home = () => {
             className="w-full h-full bg-cover bg-center bg-no-repeat"
             style={{
               backgroundImage: 'url("/eskrim_bg.jpg")',
-              }}
+            }}
           />
           {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-r from-black/70 via-black/50 to-black/30"></div>
@@ -101,13 +101,13 @@ const Home = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <button
-                  className="bg-red-500/30 backdrop-blur-sm text-white font-semibold py-4 px-8 rounded-full inline-flex items-center justify-center text-lg transition-all duration-300 border border-red-300/40 cursor-not-allowed"
-                  aria-disabled="true"
+                <Link
+                  to="/galeri"
+                  className="bg-white/10 backdrop-blur-md text-white font-semibold py-4 px-8 rounded-full inline-flex items-center justify-center text-lg transition-all duration-300 border border-white/30 hover:bg-white/20"
                 >
-                  <Play className="mr-2 w-5 h-5" />
-                  Tanıtım Videosu (Yakında)
-                </button>
+                  <Camera className="mr-2 w-5 h-5" />
+                  Galeriye Göz Atın
+                </Link>
               </motion.div>
             </motion.div>
 
@@ -265,75 +265,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* Programs Preview */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Programlarımız
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Her seviyeye uygun eskrim programları ve özel antrenman planları
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                <span className="text-6xl">⚔️</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Başlangıç Programı
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Eskrim sporuna yeni başlayanlar için temel teknikler ve
-                  güvenlik eğitimi.
-                </p>
-                <Link to="/programlar" className="text-primary-600 hover:text-primary-700 font-medium">
-                  Detayları Gör →
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-secondary-400 to-secondary-600 flex items-center justify-center">
-                <span className="text-6xl">🏆</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Gelişmiş Program
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Deneyimli sporcular için ileri teknikler ve
-                  yarışma hazırlığı.
-                </p>
-                <Link to="/programlar" className="text-primary-600 hover:text-primary-700 font-medium">
-                  Detayları Gör →
-                </Link>
-              </div>
-            </div>
-
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                <span className="text-6xl">🏕️</span>
-              </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Yaz/Kış Kampları
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Yoğun antrenman ve eğlenceli aktivitelerle dolu
-                  sezon kampları.
-                </p>
-                <Link to="/yaz-kampi" className="text-primary-600 hover:text-primary-700 font-medium">
-                  Detayları Gör →
-                </Link>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="bg-primary-600 text-white py-16 lg:py-24">
@@ -348,9 +279,6 @@ const Home = () => {
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/iletisim" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
               Ücretsiz Deneme Dersi
-            </Link>
-            <Link to="/hocalar" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-medium py-3 px-8 rounded-lg transition-colors">
-              Antrenörlerimizi Tanıyın
             </Link>
           </div>
         </div>

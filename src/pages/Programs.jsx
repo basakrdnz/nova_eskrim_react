@@ -15,7 +15,7 @@ const Programs = () => {
         'Güvenlik eğitimi',
         'Ekipman tanıtımı',
         'Grup antrenmanları',
-        'Temel kurallar eğitimi'
+        'Psikolojik destek'
       ],
       image: '⚔️',
       color: 'from-primary-400 to-primary-600'
@@ -31,7 +31,7 @@ const Programs = () => {
         'İleri teknik eğitimi',
         'Yarışma stratejileri',
         'Video analiz',
-        'Mental hazırlık',
+        'Psikolojik destek',
         'Ulusal yarışma katılımı'
       ],
       image: '🏆',
@@ -65,7 +65,7 @@ const Programs = () => {
         'Temel ve orta seviye teknikler',
         'Esnek program',
         'Sosyal antrenman',
-        'Fitness odaklı',
+        'Psikolojik destek',
         'Hobi amaçlı yarışmalar'
       ],
       image: '🎯',
@@ -82,7 +82,7 @@ const Programs = () => {
         'Oyun temelli eğitim',
         'Koordinasyon geliştirme',
         'Sosyal beceriler',
-        'Güvenlik odaklı',
+        'Psikolojik destek',
         'Ebeveyn katılımı'
       ],
       image: '🌟',
@@ -99,7 +99,7 @@ const Programs = () => {
         'Hedef yarışmaya özel antrenman',
         'Yoğun teknik çalışma',
         'Yarışma simülasyonları',
-        'Beslenme danışmanlığı',
+        'Psikolojik destek',
         'Yarışma organizasyonu'
       ],
       image: '🎖️',
@@ -116,7 +116,7 @@ const Programs = () => {
             Programlarımız
           </h1>
           <p className="text-xl lg:text-2xl text-primary-100 max-w-3xl mx-auto">
-            Her seviyeye ve yaş grubuna uygun eskrim programları. 
+            Her seviyeye ve yaş grubuna uygun eskrim programları.
             Size en uygun programı seçin ve eskrim yolculuğunuza başlayın.
           </p>
         </div>
@@ -138,7 +138,7 @@ const Programs = () => {
                   <p className="text-gray-600 mb-4">
                     {program.description}
                   </p>
-                  
+
                   <div className="space-y-2 mb-6">
                     <div className="flex items-center text-sm text-gray-600">
                       <Clock className="w-4 h-4 mr-2" />
@@ -168,8 +168,8 @@ const Programs = () => {
                     </ul>
                   </div>
 
-                  <Link 
-                    to="/iletisim" 
+                  <Link
+                    to="/iletisim"
                     className="btn-primary w-full text-center inline-block"
                   >
                     Kayıt Ol
@@ -212,23 +212,29 @@ const Programs = () => {
                 </tr>
                 <tr className="border-b bg-gray-50">
                   <td className="px-6 py-4 font-medium">Bireysel Antrenman</td>
-                  <td className="px-6 py-4 text-center">❌</td>
+                  <td className="px-6 py-4 text-center">Haftada 1 (Tanıtım)</td>
                   <td className="px-6 py-4 text-center">Haftada 1</td>
                   <td className="px-6 py-4 text-center">Haftada 2</td>
                 </tr>
                 <tr className="border-b">
                   <td className="px-6 py-4 font-medium">Video Analiz</td>
-                  <td className="px-6 py-4 text-center">❌</td>
+                  <td className="px-6 py-4 text-center">✅</td>
                   <td className="px-6 py-4 text-center">✅</td>
                   <td className="px-6 py-4 text-center">✅</td>
                 </tr>
                 <tr className="border-b bg-gray-50">
+                  <td className="px-6 py-4 font-medium">Psikolojik Destek</td>
+                  <td className="px-6 py-4 text-center">✅</td>
+                  <td className="px-6 py-4 text-center">✅</td>
+                  <td className="px-6 py-4 text-center">✅</td>
+                </tr>
+                <tr className="border-b">
                   <td className="px-6 py-4 font-medium">Yarışma Katılımı</td>
                   <td className="px-6 py-4 text-center">Yerel</td>
                   <td className="px-6 py-4 text-center">Ulusal</td>
                   <td className="px-6 py-4 text-center">Uluslararası</td>
                 </tr>
-                <tr className="border-b">
+                <tr className="border-b bg-gray-50">
                   <td className="px-6 py-4 font-medium">Fiziksel Hazırlık</td>
                   <td className="px-6 py-4 text-center">Temel</td>
                   <td className="px-6 py-4 text-center">Gelişmiş</td>
@@ -317,7 +323,7 @@ const Programs = () => {
             Size Uygun Programı Seçin
           </h2>
           <p className="text-xl mb-8 text-primary-100 max-w-3xl mx-auto">
-            Ücretsiz deneme dersimiz için hemen kayıt olun ve 
+            Ücretsiz deneme dersimiz için hemen kayıt olun ve
             size en uygun programı belirleyelim!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

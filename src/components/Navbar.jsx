@@ -14,18 +14,11 @@ const Navbar = () => {
       current: location.pathname === '/hakkimizda',
       dropdown: [
         { name: 'Nova Eskrim', href: '/' },
-        { name: 'Hocalar', href: '/hocalar' }
+        { name: 'Ekibimiz', href: '/hocalar' },
+        { name: 'Galeri', href: '/galeri' }
       ]
     },
-    {
-      name: 'Programlar',
-      href: '/programlar',
-      current: location.pathname === '/programlar',
-      dropdown: [
-        { name: 'Antrenman Takvimi', href: '/antrenman-takvimi' },
-        { name: 'Gruplar', href: '/gruplar' }
-      ]
-    },
+
     {
       name: 'Kaynaklar',
       href: '/kaynaklar',
@@ -70,9 +63,9 @@ const Navbar = () => {
         <div className="flex justify-between h-16">
           <div className="flex items-center">
             <Link to="/" className="flex-shrink-0 flex items-center hover:opacity-80 transition-opacity">
-              <img 
-                src="/nova_icon-removebg-preview.png" 
-                alt="Nova Eskrim Logo" 
+              <img
+                src="/nova_icon-removebg-preview.png"
+                alt="Nova Eskrim Logo"
                 className="w-12 h-12 object-contain"
               />
               <span className="ml-3 text-xl font-bold text-gray-900">Nova Eskrim</span>
@@ -89,29 +82,28 @@ const Navbar = () => {
                       onClick={() => toggleDropdown(index)}
                       onMouseEnter={() => handleMouseEnter(index)}
                       onMouseLeave={handleMouseLeave}
-                      className={`nav-link flex items-center space-x-1 ${
-                        item.current ? 'nav-link-active' : ''
-                      }`}
+                      className={`nav-link flex items-center space-x-1 ${item.current ? 'nav-link-active' : ''
+                        }`}
                     >
                       <span>{item.name}</span>
                       <ChevronDown className="w-4 h-4" />
                     </button>
-                                         {activeDropdown === index && (
-                       <div 
-                         className="absolute top-full left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-1 z-50 pt-2"
-                         onMouseEnter={() => setActiveDropdown(index)}
-                         onMouseLeave={handleMouseLeave}
-                       >
+                    {activeDropdown === index && (
+                      <div
+                        className="absolute top-full left-0 mt-0 w-48 bg-white rounded-md shadow-lg py-1 z-50 pt-2"
+                        onMouseEnter={() => setActiveDropdown(index)}
+                        onMouseLeave={handleMouseLeave}
+                      >
                         {item.dropdown.map((dropdownItem) => (
-                                                     <Link
-                             key={dropdownItem.name}
-                             to={dropdownItem.href}
-                             className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
-                             onClick={() => {
-                               setActiveDropdown(null)
-                               setIsOpen(false)
-                             }}
-                           >
+                          <Link
+                            key={dropdownItem.name}
+                            to={dropdownItem.href}
+                            className="block px-4 py-2 text-sm text-gray-700 hover:bg-gray-100"
+                            onClick={() => {
+                              setActiveDropdown(null)
+                              setIsOpen(false)
+                            }}
+                          >
                             {dropdownItem.name}
                           </Link>
                         ))}
@@ -152,9 +144,8 @@ const Navbar = () => {
                   <div>
                     <button
                       onClick={() => toggleDropdown(index)}
-                      className={`w-full text-left px-3 py-2 text-base font-medium rounded-md ${
-                        item.current ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
-                      }`}
+                      className={`w-full text-left px-3 py-2 text-base font-medium rounded-md ${item.current ? 'text-primary-600 bg-primary-50' : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                        }`}
                     >
                       <div className="flex items-center justify-between">
                         <span>{item.name}</span>
@@ -182,13 +173,12 @@ const Navbar = () => {
                 ) : (
                   <Link
                     to={item.href}
-                    className={`block px-3 py-2 text-base font-medium rounded-md ${
-                      item.name === 'İletişim' 
-                        ? 'bg-primary-600 text-white hover:bg-primary-700' 
-                        : item.current 
-                          ? 'text-primary-600 bg-primary-50' 
-                          : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
-                    }`}
+                    className={`block px-3 py-2 text-base font-medium rounded-md ${item.name === 'İletişim'
+                      ? 'bg-primary-600 text-white hover:bg-primary-700'
+                      : item.current
+                        ? 'text-primary-600 bg-primary-50'
+                        : 'text-gray-700 hover:text-primary-600 hover:bg-gray-50'
+                      }`}
                     onClick={() => setIsOpen(false)}
                   >
                     {item.name}
