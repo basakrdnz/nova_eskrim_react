@@ -57,8 +57,30 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
+                <Link to="/programlar" className="text-gray-300 hover:text-white transition-colors">
+                  Programlar
+                </Link>
+              </li>
+              <li>
                 <Link to="/iletisim" className="text-gray-300 hover:text-white transition-colors">
                   İletişim
+                </Link>
+              </li>
+            </ul>
+          </div>
+
+          {/* Programs */}
+          <div>
+            <h3 className="text-lg font-semibold mb-4">Programlar</h3>
+            <ul className="space-y-2">
+              <li>
+                <Link to="/antrenman-takvimi" className="text-gray-300 hover:text-white transition-colors">
+                  Antrenman Takvimi
+                </Link>
+              </li>
+              <li>
+                <Link to="/gruplar" className="text-gray-300 hover:text-white transition-colors">
+                  Gruplar
                 </Link>
               </li>
             </ul>
