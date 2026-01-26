@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Calendar, Clock, Users, MapPin, ChevronLeft, ChevronRight, Filter } from 'lucide-react'
 import { motion } from 'framer-motion'
 import { useState } from 'react'
@@ -101,8 +102,8 @@ const TrainingCalendar = () => {
                 key={day.key}
                 onClick={() => setSelectedDay(day.key)}
                 className={`px-6 py-3 rounded-full font-medium transition-all duration-300 ${selectedDay === day.key
-                    ? `bg-gradient-to-r ${day.color} text-white shadow-lg scale-105`
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  ? `bg-gradient-to-r ${day.color} text-white shadow-lg scale-105`
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -129,8 +130,8 @@ const TrainingCalendar = () => {
                 key={group.key}
                 onClick={() => setSelectedGroup(group.key)}
                 className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${selectedGroup === group.key
-                    ? 'bg-primary-600 text-white shadow-md'
-                    : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
+                  ? 'bg-primary-600 text-white shadow-md'
+                  : 'bg-gray-100 text-gray-600 hover:bg-gray-200'
                   }`}
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -179,9 +180,9 @@ const TrainingCalendar = () => {
                               {session.time}
                             </div>
                             <span className={`px-3 py-1 rounded-full text-xs font-medium ${getGroupType(session.group) === 'children' ? 'bg-blue-100 text-blue-700' :
-                                getGroupType(session.group) === 'elite' ? 'bg-purple-100 text-purple-700' :
-                                  getGroupType(session.group) === 'special' ? 'bg-orange-100 text-orange-700' :
-                                    'bg-green-100 text-green-700'
+                              getGroupType(session.group) === 'elite' ? 'bg-purple-100 text-purple-700' :
+                                getGroupType(session.group) === 'special' ? 'bg-orange-100 text-orange-700' :
+                                  'bg-green-100 text-green-700'
                               }`}>
                               {getGroupType(session.group) === 'children' ? 'Çocuk' :
                                 getGroupType(session.group) === 'elite' ? 'Elite' :
@@ -197,13 +198,12 @@ const TrainingCalendar = () => {
                         </div>
 
                         <div className="mt-4 lg:mt-0 lg:ml-6">
-                          <motion.button
-                            className="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors"
-                            whileHover={{ scale: 1.05 }}
-                            whileTap={{ scale: 0.95 }}
+                          <Link
+                            to="/iletisim"
+                            className="bg-primary-600 text-white px-6 py-2 rounded-lg font-medium hover:bg-primary-700 transition-colors inline-block text-center"
                           >
                             Katıl
-                          </motion.button>
+                          </Link>
                         </div>
                       </div>
                     </motion.div>
@@ -270,9 +270,9 @@ const TrainingCalendar = () => {
                 Bireysel veya küçük grup antrenmanları için özel ders programları
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li className={missingClass}>• Bireysel antrenman: Bilgi için iletişime geçiniz</li>
-                <li className={missingClass}>• 2-3 kişilik grup: Bilgi için iletişime geçiniz</li>
-                <li className={missingClass}>• Aile paketi: Bilgi için iletişime geçiniz</li>
+                <li>• Bireysel Antrenman</li>
+                <li>• 2-3 Kişilik Grup Dersleri</li>
+                <li>• Aile Paketleri</li>
               </ul>
             </motion.div>
 
@@ -298,9 +298,9 @@ const TrainingCalendar = () => {
                 Aile üyelerinin birlikte antrenman yapabileceği özel program
               </p>
               <ul className="space-y-2 text-sm text-gray-600">
-                <li>• Pazar günleri 10:00-12:00</li>
-                <li>• Tüm yaş grupları</li>
-                <li>• Eğlenceli aktiviteler</li>
+                <li>• Pazar Günleri</li>
+                <li>• Tüm Yaş Grupları</li>
+                <li>• Eğlenceli Aktiviteler</li>
               </ul>
             </motion.div>
 

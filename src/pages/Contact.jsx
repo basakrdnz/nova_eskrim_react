@@ -1,8 +1,44 @@
 import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Send, Instagram, Globe } from 'lucide-react'
+import { Phone, Mail, MapPin, Clock, Send, Instagram, Globe, ChevronDown } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+
+const FAQItem = ({ question, answer }) => {
+  const [isOpen, setIsOpen] = useState(false)
+
+  return (
+    <div className="border-b border-gray-100 last:border-0">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="w-full py-6 flex items-center justify-between text-left hover:text-primary-600 transition-colors"
+      >
+        <span className="text-lg font-semibold text-gray-900">{question}</span>
+        <motion.div
+          animate={{ rotate: isOpen ? 180 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ChevronDown className="w-5 h-5 text-gray-400" />
+        </motion.div>
+      </button>
+      <AnimatePresence>
+        {isOpen && (
+          <motion.div
+            initial={{ height: 0, opacity: 0 }}
+            animate={{ height: "auto", opacity: 1 }}
+            exit={{ height: 0, opacity: 0 }}
+            transition={{ duration: 0.3, ease: "easeInOut" }}
+            className="overflow-hidden"
+          >
+            <p className="pb-6 text-gray-600 leading-relaxed">
+              {answer}
+            </p>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </div>
+  )
+}
 
 const Contact = () => {
-  const missingClass = 'bg-red-100 text-red-700 px-2 py-0.5 rounded'
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -11,6 +47,47 @@ const Contact = () => {
     message: ''
   })
 
+  const [status, setStatus] = useState('') // '', 'sending', 'success', 'error'
+
+  const faqs = [
+    {
+      question: 'Eskrimde hiç tecrübem yok, başlayabilir miyim?',
+      answer: 'Evet, kesinlikle. Eskrim eğitimlerimiz, hiç tecrübesi olmayan sporcular için temel seviyeden başlayacak şekilde planlanmaktadır. Her sporcu kendi seviyesine uygun gruplarda eğitim alır.'
+    },
+    {
+      question: 'Ekipmanımı kendim mi almalıyım?',
+      answer: 'Kulübümüz, başlangıç seviyesindeki sporcular için ekipman desteği sunmaktadır. Yarışmacı seviyeye geçen sporcular veya kendi tercihi doğrultusunda isteyen sporcular, kişisel ekipmanlarını kendileri temin edebilirler.'
+    },
+    {
+      question: 'Kaç yaşından itibaren eskrime başlayabilirim?',
+      answer: 'Sporcunun fiziksel ve zihinsel gelişimi değerlendirilerek, en erken 7 yaş itibarıyla eskrime başlanması uygundur.'
+    },
+    {
+      question: 'Haftada kaç gün antrenman yapıyorsunuz?',
+      answer: 'Antrenman sıklığı, sporcunun yaşı ve seviyesine göre değişmektedir. Haftada 3, 4 veya 5 gün antrenman programları uygulanmaktadır.'
+    },
+    {
+      question: 'Yarışmalara katılmak zorunlu mu?',
+      answer: 'Hayır, kesinlikle zorunlu değildir. Sporcularımız eskrimi hobi amaçlı yapabilir. Yarışmalara katılım, sporcunun isteği ve hazır oluş düzeyine göre planlanır.'
+    },
+    {
+      question: 'Antrenmanlar grup mu, bireysel mi yapılıyor?',
+      answer: 'Antrenmanlarımız ağırlıklı olarak grup çalışmaları şeklindedir. Gelişim ihtiyacına göre özel ders imkânı da sunulmaktadır.'
+    },
+    {
+      question: 'Eskrim çocuğum için güvenli bir spor mu?',
+      answer: 'Evet. Eskrim, koruyucu ekipmanlar ve kontrollü antrenman ortamı sayesinde güvenli bir spor branşıdır. Tüm antrenmanlar uzman antrenörler eşliğinde yapılır.'
+    },
+    {
+      question: 'Deneme antrenmanı yapabilir miyiz?',
+      answer: 'Evet, kulübümüzde deneme antrenmanı imkânı bulunmaktadır. Böylece sporcu ve veliler, eskrimi ve antrenman ortamını yakından tanıyabilir.'
+    },
+    {
+      question: 'Eskrim çocuğuma ne kazandırır?',
+      answer: 'Eskrim; disiplin, odaklanma, özgüven, beden koordinasyonu ve karakter gelişimine önemli katkı sağlar.'
+    }
+  ]
+
   const handleChange = (e) => {
     setFormData({
       ...formData,
@@ -18,18 +95,36 @@ const Contact = () => {
     })
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    // Handle form submission here
-    console.log('Form submitted:', formData)
-    alert('Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.')
-    setFormData({
-      name: '',
-      email: '',
-      phone: '',
-      subject: '',
-      message: ''
-    })
+    setStatus('sending')
+
+    try {
+      // NOTE: Replace 'YOUR_FORMSPREE_ID' with your actual Formspree ID
+      const response = await fetch('https://formspree.io/f/YOUR_FORMSPREE_ID', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          subject: '',
+          message: ''
+        })
+      } else {
+        setStatus('error')
+      }
+    } catch (error) {
+      console.error('Submission error:', error)
+      setStatus('error')
+    }
   }
 
   return (
@@ -41,7 +136,7 @@ const Contact = () => {
             İletişim
           </h1>
           <p className="text-xl lg:text-2xl text-primary-100 max-w-3xl mx-auto">
-            Nova Eskrim Kulübü ile iletişime geçin. Sorularınızı yanıtlamaktan 
+            Nova Eskrim Kulübü ile iletişime geçin. Sorularınızı yanıtlamaktan
             mutluluk duyarız.
           </p>
         </div>
@@ -138,12 +233,43 @@ const Contact = () => {
                     placeholder="Mesajınızı buraya yazın..."
                   ></textarea>
                 </div>
+
+                {status === 'success' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-green-50 text-green-700 rounded-lg border border-green-200"
+                  >
+                    Mesajınız başarıyla gönderildi! En kısa sürede size dönüş yapacağız.
+                  </motion.div>
+                )}
+
+                {status === 'error' && (
+                  <motion.div
+                    initial={{ opacity: 0, y: 10 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    className="p-4 bg-red-50 text-red-700 rounded-lg border border-red-200"
+                  >
+                    Mesaj gönderilirken bir hata oluştu. Lütfen daha sonra tekrar deneyiniz.
+                  </motion.div>
+                )}
+
                 <button
                   type="submit"
-                  className="btn-primary inline-flex items-center"
+                  disabled={status === 'sending'}
+                  className={`btn-primary inline-flex items-center justify-center min-w-[160px] ${status === 'sending' ? 'opacity-70 cursor-not-allowed' : ''}`}
                 >
-                  <Send className="mr-2 w-4 h-4" />
-                  Mesaj Gönder
+                  {status === 'sending' ? (
+                    <>
+                      <div className="w-4 h-4 border-2 border-white/30 border-t-white rounded-full animate-spin mr-2"></div>
+                      Gönderiliyor...
+                    </>
+                  ) : (
+                    <>
+                      <Send className="mr-2 w-4 h-4" />
+                      Mesaj Gönder
+                    </>
+                  )}
                 </button>
               </form>
             </div>
@@ -273,14 +399,10 @@ const Contact = () => {
               Online Formlar
             </h2>
             <p className="text-gray-600 mb-4">
-              <span className={missingClass}>
-                Sporcu tanıma formu ve KVKK formu yakında paylaşılacaktır.
-              </span>
+              Sporcu tanıma formu ve KVKK formu yakında paylaşılacaktır.
             </p>
             <p className="text-sm text-gray-500">
-              <span className={missingClass}>
-                Şimdilik formlar için bizimle iletişime geçebilirsiniz.
-              </span>
+              Şimdilik formlar için bizimle iletişime geçebilirsiniz.
             </p>
           </div>
         </div>
@@ -298,53 +420,9 @@ const Contact = () => {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-            {[
-              {
-                question: 'Eskrimde hiç tecrübem yok, başlayabilir miyim?',
-                answer: 'Evet, kesinlikle. Eskrim eğitimlerimiz, hiç tecrübesi olmayan sporcular için temel seviyeden başlayacak şekilde planlanmaktadır. Her sporcu kendi seviyesine uygun gruplarda eğitim alır.'
-              },
-              {
-                question: 'Ekipmanımı kendim mi almalıyım?',
-                answer: 'Kulübümüz, başlangıç seviyesindeki sporcular için ekipman desteği sunmaktadır. Yarışmacı seviyeye geçen sporcular veya kendi tercihi doğrultusunda isteyen sporcular, kişisel ekipmanlarını kendileri temin edebilirler.'
-              },
-              {
-                question: 'Kaç yaşından itibaren eskrime başlayabilirim?',
-                answer: 'Sporcunun fiziksel ve zihinsel gelişimi değerlendirilerek, en erken 7 yaş itibarıyla eskrime başlanması uygundur.'
-              },
-              {
-                question: 'Haftada kaç gün antrenman yapıyorsunuz?',
-                answer: 'Antrenman sıklığı, sporcunun yaşı ve seviyesine göre değişmektedir. Haftada 3, 4 veya 5 gün antrenman programları uygulanmaktadır.'
-              },
-              {
-                question: 'Yarışmalara katılmak zorunlu mu?',
-                answer: 'Hayır, kesinlikle zorunlu değildir. Sporcularımız eskrimi hobi amaçlı yapabilir. Yarışmalara katılım, sporcunun isteği ve hazır oluş düzeyine göre planlanır.'
-              },
-              {
-                question: 'Antrenmanlar grup mu, bireysel mi yapılıyor?',
-                answer: 'Antrenmanlarımız ağırlıklı olarak grup çalışmaları şeklindedir. Gelişim ihtiyacına göre özel ders imkânı da sunulmaktadır.'
-              },
-              {
-                question: 'Eskrim çocuğum için güvenli bir spor mu?',
-                answer: 'Evet. Eskrim, koruyucu ekipmanlar ve kontrollü antrenman ortamı sayesinde güvenli bir spor branşıdır. Tüm antrenmanlar uzman antrenörler eşliğinde yapılır.'
-              },
-              {
-                question: 'Deneme antrenmanı yapabilir miyiz?',
-                answer: 'Evet, kulübümüzde deneme antrenmanı imkânı bulunmaktadır. Böylece sporcu ve veliler, eskrimi ve antrenman ortamını yakından tanıyabilir.'
-              },
-              {
-                question: 'Eskrim çocuğuma ne kazandırır?',
-                answer: 'Eskrim; disiplin, odaklanma, özgüven, beden koordinasyonu ve karakter gelişimine önemli katkı sağlar.'
-              }
-            ].map((item) => (
-              <div key={item.question} className="bg-white rounded-xl p-6 shadow-lg">
-                <h3 className="text-lg font-semibold text-gray-900 mb-3">
-                  {item.question}
-                </h3>
-                <p className="text-gray-600">
-                  {item.answer}
-                </p>
-              </div>
+          <div className="max-w-3xl mx-auto bg-white rounded-3xl shadow-xl overflow-hidden px-8 py-2">
+            {faqs.map((item, index) => (
+              <FAQItem key={index} question={item.question} answer={item.answer} />
             ))}
           </div>
         </div>

@@ -18,6 +18,15 @@ const Navbar = () => {
         { name: 'Galeri', href: '/galeri' }
       ]
     },
+    {
+      name: 'Programlar',
+      href: '/programlar',
+      current: location.pathname === '/programlar',
+      dropdown: [
+        { name: 'Antrenman Takvimi', href: '/antrenman-takvimi' },
+        { name: 'Gruplar', href: '/gruplar' }
+      ]
+    },
 
     {
       name: 'Kaynaklar',
