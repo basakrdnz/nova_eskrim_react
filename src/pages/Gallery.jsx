@@ -1,189 +1,182 @@
 import { useState } from 'react'
-import { Camera, Video, Users, Award, Calendar } from 'lucide-react'
+import { Camera, Users, Award, Calendar, X, Maximize2 } from 'lucide-react'
+import { motion, AnimatePresence } from 'framer-motion'
+import eskrim1 from '../assets/eskrim1.JPG'
+import eskrim2 from '../assets/eskrim2.JPG'
+import eskrim3 from '../assets/eskrim3.JPG'
+import eskrim4 from '../assets/eskrim4.JPG'
+import eskrim5 from '../assets/eskrim5.JPG'
+import eskrim6 from '../assets/eskrim6.JPG'
+import eskrim7 from '../assets/eskrim7.jpg'
+import eskrim8 from '../assets/eskrim8.JPG'
+import eskrim9 from '../assets/eskrim9.JPG'
+import eskrim10 from '../assets/eskrim10.JPG'
+import eskrim11 from '../assets/eskrim11.JPG'
+import eskrim12 from '../assets/eskrim12.JPG'
+import eskrim13 from '../assets/eskrim13.jpg'
+import eskrim14 from '../assets/eskrim14.JPG'
+import eskrim15 from '../assets/eskrim15.JPG'
+import eskrim16 from '../assets/eskrim16.JPG'
+import eskrim17 from '../assets/eskrim17.JPG'
+import eskrim18 from '../assets/eskrim18.JPG'
+import eskrim19 from '../assets/eskrim19.jpg'
+import eskrim20 from '../assets/eskrim20.JPG'
+import eskrim21 from '../assets/eskrim21.JPG'
 
 const Gallery = () => {
-  const missingClass = 'bg-red-100 text-red-700 px-2 py-0.5 rounded'
-
-  const [activeTab, setActiveTab] = useState('all')
+  const [selectedImage, setSelectedImage] = useState(null)
 
   const categories = [
     { id: 'all', name: 'Tümü', icon: Camera },
     { id: 'training', name: 'Antrenman', icon: Users },
     { id: 'competition', name: 'Yarışma', icon: Award },
     { id: 'events', name: 'Etkinlikler', icon: Calendar },
-    { id: 'videos', name: 'Videolar', icon: Video }
   ]
 
   const photos = [
-    {
-      id: 1,
-      category: 'training',
-      title: 'Fotoğraflar Yakında',
-      description: 'Fotoğraflar WhatsApp üzerinden ulaştığında galeride yayınlanacaktır.',
-      image: '📷',
-      date: '2025-01-15'
-    }
+    { id: 8, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim1, date: '2025-01-15' },
+    { id: 2, category: 'training', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim2, date: '2025-01-15' },
+    { id: 3, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim3, date: '2025-01-15' },
+    { id: 13, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim4, date: '2025-01-15' },
+    { id: 5, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim5, date: '2025-01-15' },
+    { id: 6, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim6, date: '2025-01-15' },
+    { id: 4, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim8, date: '2025-01-15' },
+    { id: 9, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim9, date: '2025-01-15' },
+    { id: 10, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim10, date: '2025-01-15' },
+    { id: 11, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim11, date: '2025-01-15' },
+    { id: 12, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim12, date: '2025-01-15' },
+    { id: 7, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim13, date: '2025-01-15' },
+    { id: 14, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim14, date: '2025-01-15' },
+    { id: 15, category: 'training', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim15, date: '2025-01-15' },
+    { id: 16, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim16, date: '2025-01-15' },
+    { id: 17, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim17, date: '2025-01-15' },
+    { id: 18, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim18, date: '2025-01-15' },
+    { id: 19, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim19, date: '2025-01-15' },
+    { id: 20, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim20, date: '2025-01-15' },
+    { id: 21, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim21, date: '2026-01-26' },
+    { id: 1, category: 'competition', title: 'Antrenman Anları', description: 'Nova Eskrim antrenmanlarından kareler', image: eskrim7, date: '2025-01-15' }
   ]
 
-  const videos = [
-    {
-      id: 1,
-      title: 'Videolar Yakında',
-      description: 'Tanıtım ve antrenman videoları hazır olduğunda eklenecektir.',
-      thumbnail: '🎬',
-      duration: 'Yakında',
-      category: 'videos',
-      date: '2025-01-15'
-    }
-  ]
-
-  const filteredContent = activeTab === 'all' 
-    ? [...photos, ...videos]
-    : activeTab === 'videos' 
-    ? videos 
-    : photos.filter(item => item.category === activeTab)
 
   return (
-    <div>
+    <div className="bg-white min-h-screen">
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary-900 to-primary-700 text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold mb-6">
+      <section className="relative bg-primary-900 overflow-hidden py-24 lg:py-32">
+        <div className="absolute inset-0 opacity-20">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] from-primary-400 via-primary-900 to-primary-900"></div>
+        </div>
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+          <motion.h1
+            className="text-5xl lg:text-7xl font-bold text-white mb-6 tracking-tight"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+          >
             Galeri
-          </h1>
-          <p className="text-xl lg:text-2xl text-primary-100 max-w-3xl mx-auto">
-            Nova Eskrim Kulübü\'nün en güzel anları, antrenmanlar, 
-            yarışmalar ve etkinliklerden kareler
-          </p>
+          </motion.h1>
+          <motion.p
+            className="text-xl lg:text-2xl text-primary-100 max-w-3xl mx-auto font-light leading-relaxed"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Nova Eskrim ailesinin başarıları, antrenmanları ve unutulmaz anları.
+          </motion.p>
         </div>
       </section>
 
-      {/* Filter Tabs */}
-      <section className="py-8 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-wrap justify-center gap-4">
-            {categories.map((category) => (
-              <button
-                key={category.id}
-                onClick={() => setActiveTab(category.id)}
-                className={`flex items-center px-6 py-3 rounded-lg font-medium transition-colors ${
-                  activeTab === category.id
-                    ? 'bg-primary-600 text-white'
-                    : 'bg-white text-gray-700 hover:bg-gray-100'
-                }`}
-              >
-                <category.icon className="w-4 h-4 mr-2" />
-                {category.name}
-              </button>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* Gallery Grid - Masonry style */}
+      <section className="py-20 lg:py-28">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="columns-1 sm:columns-2 md:columns-3 lg:columns-4 gap-6 space-y-6">
+            <AnimatePresence>
+              {photos.map((item) => (
+                <motion.div
+                  key={item.id}
+                  layout
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  onClick={() => setSelectedImage(item)}
+                  className="relative break-inside-avoid group cursor-pointer rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl transition-all duration-500"
+                >
+                  <img
+                    src={item.image}
+                    alt="Nova Eskrim"
+                    className="w-full h-auto object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
 
-      {/* Gallery Grid */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredContent.map((item) => (
-              <div key={item.id} className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-                <div className="h-64 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                  <span className="text-6xl">{item.image || item.thumbnail}</span>
-                </div>
-                <div className="p-6">
-                  <div className="flex items-center justify-between mb-2">
-                    <h3 className="text-lg font-semibold text-gray-900">
-                      {item.title}
-                    </h3>
-                    {item.duration && (
-                      <span className="text-sm text-gray-500 bg-gray-100 px-2 py-1 rounded">
-                        {item.duration}
+                  {/* Hover Overlay with Category */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-all duration-300 flex flex-col justify-end p-6">
+                    <div className="translate-y-4 group-hover:translate-y-0 transition-transform duration-500">
+                      <span className="inline-block px-3 py-1 bg-primary-600/90 text-white text-[10px] font-bold uppercase tracking-widest rounded-full mb-2 backdrop-blur-sm">
+                        {categories.find(c => c.id === item.category)?.name}
                       </span>
-                    )}
+                      <div className="flex items-center text-white/70 text-sm font-medium">
+                        <Maximize2 className="w-4 h-4 mr-2" />
+                        Tam Ekran Gör
+                      </div>
+                    </div>
                   </div>
-                  <p className="text-gray-600 mb-4">
-                    <span className={missingClass}>{item.description}</span>
-                  </p>
-                  <div className="flex items-center justify-between">
-                    <span className="text-sm text-gray-500">
-                      {new Date(item.date).toLocaleDateString('tr-TR')}
-                    </span>
-                    <button className="text-primary-600 hover:text-primary-700 font-medium">
-                      Detayları Gör
-                    </button>
-                  </div>
-                </div>
-              </div>
-            ))}
+                </motion.div>
+              ))}
+            </AnimatePresence>
           </div>
         </div>
       </section>
 
-      {/* Featured Videos */}
-      <section className="py-16 lg:py-24 bg-gray-50">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-              Öne Çıkan Videolar
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Antrenman teknikleri, yarışma analizleri ve kulüp etkinliklerimizden videolar
-            </p>
-          </div>
 
-            <div className="bg-white rounded-xl shadow-lg p-8 text-center">
-            <Video className="w-12 h-12 text-primary-600 mx-auto mb-4" />
-            <h3 className="text-xl font-semibold text-gray-900 mb-2">
-              Videolar yakında eklenecek
-            </h3>
-            <p className="text-gray-600">
-              <span className={missingClass}>
-                Tanıtım ve antrenman videoları hazır olduğunda burada yayınlanacaktır.
-              </span>
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* Statistics */}
-      <section className="py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary-600 mb-2">📷</div>
-              <div className={`text-gray-600 ${missingClass}`}>Fotoğraflar Yakında</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary-600 mb-2">🎬</div>
-              <div className={`text-gray-600 ${missingClass}`}>Videolar Yakında</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary-600 mb-2">🏆</div>
-              <div className={`text-gray-600 ${missingClass}`}>Yarışmalar Yakında</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary-600 mb-2">✨</div>
-              <div className="text-gray-600">Yeni Paylaşımlar</div>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Lightbox Modal */}
+      <AnimatePresence>
+        {selectedImage && (
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            onClick={() => setSelectedImage(null)}
+            className="fixed inset-0 z-[100] bg-black/95 backdrop-blur-xl flex items-center justify-center p-4"
+          >
+            <button
+              className="absolute top-6 right-6 text-white/50 hover:text-white transition-colors z-[110]"
+              onClick={() => setSelectedImage(null)}
+            >
+              <X className="w-8 h-8" />
+            </button>
+            <motion.div
+              initial={{ scale: 0.9 }}
+              animate={{ scale: 1 }}
+              exit={{ scale: 0.9 }}
+              onClick={(e) => e.stopPropagation()}
+              className="relative max-w-5xl w-full flex items-center justify-center"
+            >
+              <img
+                src={selectedImage.image}
+                alt="Nova Eskrim"
+                className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl"
+              />
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
 
       {/* CTA Section */}
-      <section className="bg-primary-600 text-white py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-3xl lg:text-4xl font-bold mb-4">
-            Bu Anların Bir Parçası Olun
-          </h2>
-          <p className="text-xl mb-8 text-primary-100 max-w-3xl mx-auto">
-            Nova Eskrim ailesine katılın ve kendi başarı hikayenizi yazın!
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/iletisim" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
-              Hemen Kayıt Ol
-            </a>
-            <a href="/programlar" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-medium py-3 px-8 rounded-lg transition-colors">
-              Programları İncele
-            </a>
+      <section className="bg-white py-24 lg:py-32 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="bg-primary-900 rounded-[3rem] p-12 lg:p-20 text-center relative overflow-hidden">
+            <div className="absolute top-0 right-0 w-64 h-64 bg-primary-400 opacity-10 rounded-full blur-3xl -mr-32 -mt-32"></div>
+            <div className="absolute bottom-0 left-0 w-64 h-64 bg-primary-400 opacity-10 rounded-full blur-3xl -ml-32 -mb-32"></div>
+
+            <h2 className="text-4xl lg:text-6xl font-bold text-white mb-8 relative z-10">
+              Bu Anların Bir Parçası Olun
+            </h2>
+            <p className="text-xl text-primary-100 mb-12 max-w-2xl mx-auto font-light leading-relaxed relative z-10">
+              Nova Eskrim ailesine katılın ve kendi başarı hikayenizi bizimle birlikte yazın.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
+              <a href="/iletisim" className="bg-white text-primary-900 hover:bg-primary-50 font-bold py-5 px-10 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-white/20 active:scale-95">
+                Hemen Kayıt Ol
+              </a>
+            </div>
           </div>
         </div>
       </section>
@@ -192,3 +185,4 @@ const Gallery = () => {
 }
 
 export default Gallery
+

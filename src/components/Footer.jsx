@@ -52,11 +52,6 @@ const Footer = () => {
                 </Link>
               </li>
               <li>
-                <Link to="/programlar" className="text-gray-300 hover:text-white transition-colors">
-                  Programlar
-                </Link>
-              </li>
-              <li>
                 <Link to="/galeri" className="text-gray-300 hover:text-white transition-colors">
                   Galeri
                 </Link>
@@ -69,32 +64,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Programs */}
-          <div>
-            <h3 className="text-lg font-semibold mb-4">Programlar</h3>
-            <ul className="space-y-2">
-              <li>
-                <Link to="/antrenman-takvimi" className="text-gray-300 hover:text-white transition-colors">
-                  Antrenman Takvimi
-                </Link>
-              </li>
-              <li>
-                <Link to="/gruplar" className="text-gray-300 hover:text-white transition-colors">
-                  Gruplar
-                </Link>
-              </li>
-              <li>
-                <Link to="/yaz-kampi" className="text-gray-300 hover:text-white transition-colors">
-                  Yaz Kampı
-                </Link>
-              </li>
-              <li>
-                <Link to="/kis-kampi" className="text-gray-300 hover:text-white transition-colors">
-                  Kış Kampı
-                </Link>
-              </li>
-            </ul>
-          </div>
 
           {/* Contact Information */}
           <div>
