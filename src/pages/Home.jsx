@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { Award, Users, Calendar, Target, ArrowRight, Camera } from 'lucide-react'
+import { Award, Users, Calendar, Target, ArrowRight, Camera, Crown, Star, Swords } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'framer-motion'
 
 const Home = () => {
@@ -279,56 +279,62 @@ const Home = () => {
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-primary-400 to-primary-600 flex items-center justify-center">
-                <span className="text-6xl">⚔️</span>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col group">
+              <div className="h-48 bg-gradient-to-br from-slate-900 to-slate-800 flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
+                <div className="absolute inset-0 bg-black/10"></div>
+                <Crown className="w-16 h-16 text-white drop-shadow-md relative z-10 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Başlangıç Programı
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Eskrim sporuna yeni başlayanlar için temel teknikler ve
-                  güvenlik eğitimi.
+              <div className="p-8 flex flex-col flex-grow bg-white relative z-20 mt-[-1rem] rounded-t-3xl border-t border-gray-100 text-left">
+                <div className="mb-4">
+                  <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">
+                    Elit Grup
+                  </h3>
+                </div>
+                <p className="text-gray-600 mb-6 flex-grow leading-relaxed min-h-[80px]">
+                  Ulusal ve uluslararası yarışmalara hazırlık için özel, yoğun antrenman programı.
                 </p>
-                <Link to="/programlar" className="text-primary-600 font-medium hover:text-primary-700">
-                  Detayları Gör →
+                <Link to="/programlar" className="w-full flex justify-center items-center bg-gray-50 hover:bg-primary-50 text-primary-700 font-semibold py-3 px-4 rounded-xl transition-colors mt-auto group-hover:bg-primary-600 group-hover:text-white">
+                  Detayları İncele <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-secondary-400 to-secondary-600 flex items-center justify-center">
-                <span className="text-6xl">🏆</span>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col group">
+              <div className="h-48 bg-gradient-to-br from-primary-900 to-primary-800 flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
+                <div className="absolute inset-0 bg-black/10"></div>
+                <Star className="w-16 h-16 text-white drop-shadow-md relative z-10 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Gelişmiş Program
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Deneyimli sporcular için ileri teknikler ve
-                  yarışma hazırlığı.
+              <div className="p-8 flex flex-col flex-grow bg-white relative z-20 mt-[-1rem] rounded-t-3xl border-t border-gray-100 text-left">
+                <div className="mb-4">
+                  <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">
+                    Pro Grup
+                  </h3>
+                </div>
+                <p className="text-gray-600 mb-6 flex-grow leading-relaxed min-h-[80px]">
+                  Oyun temelli yaklaşımla yarışma hazırlığı, disiplin ve takım ruhunun geliştirildiği program.
                 </p>
-                <Link to="/programlar" className="text-primary-600 font-medium hover:text-primary-700">
-                  Detayları Gör →
+                <Link to="/programlar" className="w-full flex justify-center items-center bg-gray-50 hover:bg-primary-50 text-primary-700 font-semibold py-3 px-4 rounded-xl transition-colors mt-auto group-hover:bg-primary-600 group-hover:text-white">
+                  Detayları İncele <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
             </div>
 
-            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow">
-              <div className="h-48 bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                <span className="text-6xl">🏕️</span>
+            <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow flex flex-col group">
+              <div className="h-48 bg-gradient-to-br from-slate-800 to-slate-700 flex items-center justify-center relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
+                <div className="absolute inset-0 bg-black/10"></div>
+                <Swords className="w-16 h-16 text-white drop-shadow-md relative z-10 group-hover:scale-110 transition-transform duration-300" />
               </div>
-              <div className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2">
-                  Yaz/Kış Kampları
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Yoğun antrenman ve eğlenceli aktivitelerle dolu
-                  sezon kampları.
+              <div className="p-8 flex flex-col flex-grow bg-white relative z-20 mt-[-1rem] rounded-t-3xl border-t border-gray-100 text-left">
+                <div className="mb-4">
+                  <h3 className="text-2xl font-extrabold text-gray-900 tracking-tight">
+                    Veteran
+                  </h3>
+                </div>
+                <p className="text-gray-600 mb-6 flex-grow leading-relaxed min-h-[80px]">
+                  Yetişkinler için özel antrenman ortamında yarışma hazırlığı ve sosyal yaşam programı.
                 </p>
-                <Link to="/programlar" className="text-primary-600 font-medium hover:text-primary-700">
-                  Detayları Gör →
+                <Link to="/programlar" className="w-full flex justify-center items-center bg-gray-50 hover:bg-primary-50 text-primary-700 font-semibold py-3 px-4 rounded-xl transition-colors mt-auto group-hover:bg-primary-600 group-hover:text-white">
+                  Detayları İncele <ArrowRight className="w-4 h-4 ml-2" />
                 </Link>
               </div>
             </div>

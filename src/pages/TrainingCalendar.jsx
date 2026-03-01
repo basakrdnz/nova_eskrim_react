@@ -10,62 +10,53 @@ const TrainingCalendar = () => {
 
   const schedule = {
     monday: [
-      { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '16:00 - 18:00', group: 'Çocuk Grubu (7-10)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '19:00 - 21:00', group: 'Gelişmiş Seviye', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
+      { time: '19:00 - 21:00', group: 'Pro Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     tuesday: [
-      { time: '10:00 - 12:00', group: 'Yetişkin Orta', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '17:00 - 19:00', group: 'Çocuk Grubu (11-14)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '20:00 - 22:00', group: 'Elite Program', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
+      { time: '19:00 - 21:00', group: 'Elit Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     wednesday: [
-      { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '16:00 - 18:00', group: 'Çocuk Grubu (7-10)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '19:00 - 21:00', group: 'Yarışma Hazırlık', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
+      { time: '19:00 - 21:00', group: 'Pro Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     thursday: [
-      { time: '10:00 - 12:00', group: 'Yetişkin Orta', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '17:00 - 19:00', group: 'Çocuk Grubu (11-14)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '20:00 - 22:00', group: 'Elite Program', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
+      { time: '19:00 - 21:00', group: 'Elit Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     friday: [
-      { time: '09:00 - 11:00', group: 'Yetişkin Başlangıç', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '16:00 - 18:00', group: 'Çocuk Grubu (7-10)', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '19:00 - 21:00', group: 'Gelişmiş Seviye', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
+      { time: '19:00 - 20:30', group: 'Veteran Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     saturday: [
-      { time: '10:00 - 12:00', group: 'Başlangıç Programı', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '14:00 - 16:00', group: 'Elite Program', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '16:00 - 18:00', group: 'Yarışma Hazırlık', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
+      { time: '10:00 - 12:00', group: 'Pro Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '12:30 - 14:30', group: 'Elit Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '16:30 - 17:30', group: 'Veteran Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ],
     sunday: [
-      { time: '10:00 - 12:00', group: 'Aile Programı', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
-      { time: '14:00 - 16:00', group: 'Özel Dersler', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
+      { time: '10:00 - 12:00', group: 'Elit Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' },
+      { time: '12:30 - 14:00', group: 'Pro Grup', coach: 'Nova Eskrim Antrenörleri', location: 'Nova Eskrim Salonu' }
     ]
   }
 
   const days = [
-    { key: 'monday', name: 'Pazartesi', shortName: 'Pzt', color: 'from-red-500 to-red-600' },
-    { key: 'tuesday', name: 'Salı', shortName: 'Sal', color: 'from-orange-500 to-orange-600' },
-    { key: 'wednesday', name: 'Çarşamba', shortName: 'Çar', color: 'from-yellow-500 to-yellow-600' },
-    { key: 'thursday', name: 'Perşembe', shortName: 'Per', color: 'from-green-500 to-green-600' },
-    { key: 'friday', name: 'Cuma', shortName: 'Cum', color: 'from-blue-500 to-blue-600' },
-    { key: 'saturday', name: 'Cumartesi', shortName: 'Cmt', color: 'from-purple-500 to-purple-600' },
-    { key: 'sunday', name: 'Pazar', shortName: 'Paz', color: 'from-pink-500 to-pink-600' }
+    { key: 'monday', name: 'Pazartesi', shortName: 'Pzt', color: 'from-primary-800 to-primary-900' },
+    { key: 'tuesday', name: 'Salı', shortName: 'Sal', color: 'from-primary-800 to-primary-900' },
+    { key: 'wednesday', name: 'Çarşamba', shortName: 'Çar', color: 'from-primary-800 to-primary-900' },
+    { key: 'thursday', name: 'Perşembe', shortName: 'Per', color: 'from-primary-800 to-primary-900' },
+    { key: 'friday', name: 'Cuma', shortName: 'Cum', color: 'from-primary-800 to-primary-900' },
+    { key: 'saturday', name: 'Cumartesi', shortName: 'Cmt', color: 'from-primary-800 to-primary-900' },
+    { key: 'sunday', name: 'Pazar', shortName: 'Paz', color: 'from-primary-800 to-primary-900' }
   ]
 
   const groups = [
     { key: 'all', name: 'Tüm Gruplar' },
-    { key: 'children', name: 'Çocuk Grupları' },
-    { key: 'adult', name: 'Yetişkin Grupları' },
-    { key: 'special', name: 'Özel Programlar' }
+    { key: 'elit', name: 'Elit Grup' },
+    { key: 'pro', name: 'Pro Grup' },
+    { key: 'veteran', name: 'Veteran' }
   ]
 
   const getGroupType = (groupName) => {
-    if (groupName.includes('Çocuk') || groupName.includes('Aile')) return 'children'
-    if (groupName.includes('Özel') || groupName.includes('Bireysel')) return 'special'
-    return 'adult'
+    if (groupName.includes('Elit')) return 'elit'
+    if (groupName.includes('Pro')) return 'pro'
+    if (groupName.includes('Veteran')) return 'veteran'
+    return 'other'
   }
 
   const filteredSchedule = schedule[selectedDay].filter(session => {
@@ -179,14 +170,12 @@ const TrainingCalendar = () => {
                               <Clock className="w-5 h-5 mr-2" />
                               {session.time}
                             </div>
-                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${getGroupType(session.group) === 'children' ? 'bg-blue-100 text-blue-700' :
-                              getGroupType(session.group) === 'elite' ? 'bg-purple-100 text-purple-700' :
-                                getGroupType(session.group) === 'special' ? 'bg-orange-100 text-orange-700' :
-                                  'bg-green-100 text-green-700'
+                            <span className={`px-3 py-1 rounded-full text-xs font-medium ${getGroupType(session.group) === 'elit' ? 'bg-slate-800 text-white' :
+                              getGroupType(session.group) === 'pro' ? 'bg-primary-100 text-primary-700' :
+                                'bg-slate-100 text-slate-700'
                               }`}>
-                              {getGroupType(session.group) === 'children' ? 'Çocuk' :
-                                getGroupType(session.group) === 'elite' ? 'Elite' :
-                                  getGroupType(session.group) === 'special' ? 'Özel' : 'Yetişkin'}
+                              {getGroupType(session.group) === 'elit' ? 'Elit' :
+                                getGroupType(session.group) === 'pro' ? 'Pro' : 'Veteran'}
                             </span>
                           </div>
 

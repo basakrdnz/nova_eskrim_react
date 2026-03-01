@@ -23,8 +23,8 @@ const Navbar = () => {
       href: '/programlar',
       current: location.pathname === '/programlar',
       dropdown: [
-        { name: 'Antrenman Takvimi', href: '/antrenman-takvimi' },
-        { name: 'Gruplar', href: '/gruplar' }
+        { name: 'Gruplar', href: '/programlar' },
+        { name: 'Antrenman Takvimi', href: '/antrenman-takvimi' }
       ]
     },
 
