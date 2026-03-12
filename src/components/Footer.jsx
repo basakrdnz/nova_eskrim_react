@@ -41,14 +41,10 @@ const Footer = () => {
           <div>
             <h3 className="text-lg font-semibold mb-4">Hızlı Linkler</h3>
             <ul className="space-y-2">
+
               <li>
-                <Link to="/hakkimizda" className="text-gray-300 hover:text-white transition-colors">
-                  Hakkımızda
-                </Link>
-              </li>
-              <li>
-                <Link to="/hocalar" className="text-gray-300 hover:text-white transition-colors">
-                  Hocalar
+                <Link to="/ekibimiz" className="text-gray-300 hover:text-white transition-colors">
+                  Ekibimiz
                 </Link>
               </li>
               <li>

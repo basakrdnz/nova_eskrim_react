@@ -90,7 +90,7 @@ const Home = () => {
               >
                 <Link
                   to="/iletisim"
-                  className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-8 rounded-full inline-flex items-center justify-center text-lg transition-all duration-300 shadow-lg hover:shadow-xl"
+                  className="bg-primary-600 hover:bg-primary-700 text-white font-semibold py-4 px-10 rounded-full inline-flex items-center justify-center text-lg transition-all duration-300 shadow-md active:scale-95"
                 >
                   Hemen Başlayın
                   <ArrowRight className="ml-2 w-5 h-5" />
@@ -103,7 +103,7 @@ const Home = () => {
               >
                 <Link
                   to="/galeri"
-                  className="bg-white/10 backdrop-blur-md text-white font-semibold py-4 px-8 rounded-full inline-flex items-center justify-center text-lg transition-all duration-300 border border-white/30 hover:bg-white/20"
+                  className="bg-white/10 backdrop-blur-md text-white font-semibold py-4 px-10 rounded-full inline-flex items-center justify-center text-lg transition-all duration-300 border border-white/30 hover:bg-white/20 active:scale-95"
                 >
                   <Camera className="mr-2 w-5 h-5" />
                   Galeriye Göz Atın
@@ -147,7 +147,7 @@ const Home = () => {
       </section>
 
       {/* Features Section */}
-      <section id="features-section" className="py-16 lg:py-24 bg-gray-50">
+      <section id="features-section" className="py-16 lg:py-24 bg-white border-b border-gray-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             className="text-center mb-16"
@@ -353,10 +353,10 @@ const Home = () => {
             Nova Eskrim ailesine katılın!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/iletisim" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
+            <Link to="/iletisim" className="bg-white text-primary-900 hover:bg-gray-100 font-semibold py-4 px-10 rounded-full transition-all duration-300 active:scale-95 text-lg">
               Ücretsiz Deneme Dersi
             </Link>
-            <Link to="/hocalar" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-medium py-3 px-8 rounded-lg transition-colors">
+            <Link to="/ekibimiz" className="border-2 border-white text-white hover:bg-white hover:text-primary-900 font-semibold py-4 px-10 rounded-full transition-all duration-300 active:scale-95 text-lg">
               Antrenörlerimizi Tanıyın
             </Link>
           </div>

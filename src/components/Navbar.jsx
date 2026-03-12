@@ -14,7 +14,7 @@ const Navbar = () => {
       current: location.pathname === '/hakkimizda',
       dropdown: [
         { name: 'Nova Eskrim', href: '/' },
-        { name: 'Ekibimiz', href: '/hocalar' },
+        { name: 'Ekibimiz', href: '/ekibimiz' },
         { name: 'Galeri', href: '/galeri' }
       ]
     },

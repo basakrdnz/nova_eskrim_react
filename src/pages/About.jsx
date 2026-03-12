@@ -28,17 +28,17 @@ const About = () => {
               </h2>
               <div className="space-y-4 text-lg text-gray-600">
                 <p>
-                  Nova Eskrim Spor Kulübü, eskrim sporuna olan tutku ve bu branşta 
-                  nitelikli sporcular yetiştirme hedefiyle Adil ve Volkan tarafından 
+                  Nova Eskrim Spor Kulübü, eskrim sporuna olan tutku ve bu branşta
+                  nitelikli sporcular yetiştirme hedefiyle Adil ve Volkan tarafından
                   2025 yılında kurulmuştur.
                 </p>
                 <p>
-                  Kulübümüz, sporcu gelişimini merkeze alan, disiplinli ve uzun vadeli 
+                  Kulübümüz, sporcu gelişimini merkeze alan, disiplinli ve uzun vadeli
                   gelişimi esas alan bir antrenman yaklaşımıyla yola çıkmıştır.
                 </p>
                 <p>
-                  Güvenli ve aile ortamında, saygı ve takım ruhu değerleriyle yetişen 
-                  sporcularımızı geleceğe hazırlarken, “Bugünün disiplini, yarının başarısı” 
+                  Güvenli ve aile ortamında, saygı ve takım ruhu değerleriyle yetişen
+                  sporcularımızı geleceğe hazırlarken, “Bugünün disiplini, yarının başarısı”
                   mottosuyla yolumuza kararlılıkla devam ediyoruz.
                 </p>
               </div>
@@ -84,10 +84,10 @@ const About = () => {
                 Misyonumuz
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Bilimsel antrenman yöntemleri, disiplinli çalışma anlayışı ve etik 
-                spor değerleriyle; her yaş grubundan sporcuya kaliteli eğitim sunmak, 
-                sporcuların sadece sportif değil aynı zamanda karakter ve disiplin 
-                gelişimini desteklemek, veliler için güven veren bir aile ortamı 
+                Bilimsel antrenman yöntemleri, disiplinli çalışma anlayışı ve etik
+                spor değerleriyle; her yaş grubundan sporcuya kaliteli eğitim sunmak,
+                sporcuların sadece sportif değil aynı zamanda karakter ve disiplin
+                gelişimini desteklemek, veliler için güven veren bir aile ortamı
                 oluşturarak sürdürülebilir sportif başarılar elde etmek.
               </p>
             </div>
@@ -100,8 +100,8 @@ const About = () => {
                 Vizyonumuz
               </h3>
               <p className="text-gray-600 leading-relaxed">
-                Ulusal ve uluslararası arenada başarılar elde eden, karakterli ve 
-                bilinçli sporcular yetiştiren; eskrim branşında örnek gösterilen 
+                Ulusal ve uluslararası arenada başarılar elde eden, karakterli ve
+                bilinçli sporcular yetiştiren; eskrim branşında örnek gösterilen
                 bir spor kulübü olmak.
               </p>
             </div>
@@ -223,7 +223,7 @@ const About = () => {
               Ekibimiz
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Deneyimli ve uzman antrenörlerimizle sporcularımıza 
+              Deneyimli ve uzman antrenörlerimizle sporcularımıza
               en iyi eğitimi veriyoruz
             </p>
           </div>

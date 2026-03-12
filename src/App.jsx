@@ -2,6 +2,7 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { useEffect, useState } from 'react'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
+import WhatsAppButton from './components/WhatsAppButton'
 import Home from './pages/Home'
 import About from './pages/About'
 import Coaches from './pages/Coaches'
@@ -56,7 +57,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/hakkimizda" element={<About />} />
-            <Route path="/hocalar" element={<Coaches />} />
+            <Route path="/ekibimiz" element={<Coaches />} />
             <Route path="/galeri" element={<Gallery />} />
             <Route path="/programlar" element={<Programs />} />
             <Route path="/antrenman-takvimi" element={<TrainingCalendar />} />
@@ -72,6 +73,7 @@ function App() {
             <Route path="/iletisim" element={<Contact />} />
           </Routes>
         </main>
+        <WhatsAppButton />
         <Footer />
       </div>
     </Router>

@@ -91,8 +91,8 @@ const Coaches = () => {
                       src={coach.image}
                       alt={coach.name}
                       className={`w-full h-full object-cover transition-transform duration-700 ${coach.name === 'Volkan Şener'
-                          ? 'scale-[1.3] object-top group-hover:scale-[1.4]'
-                          : 'group-hover:scale-110'
+                        ? 'scale-[1.3] object-top group-hover:scale-[1.4]'
+                        : 'group-hover:scale-110'
                         }`}
                     />
                   ) : (
