@@ -113,7 +113,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="py-24 bg-white border-t border-gray-100">
+    <section className="py-24 bg-gray-100/80 border-t border-gray-200">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Bize Mesaj Gönderin</h2>
@@ -128,7 +128,7 @@ const ContactForm = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 space-y-6"
+          className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_12px_40px_rgba(15,23,42,0.1)] border border-gray-200/90 ring-1 ring-black/5 space-y-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
