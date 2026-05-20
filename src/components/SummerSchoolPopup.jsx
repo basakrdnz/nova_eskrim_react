@@ -40,7 +40,7 @@ const SummerSchoolPopup = () => {
             exit={{ opacity: 0, scale: 0.95, y: 20 }}
             transition={{ duration: 0.4, ease: 'easeOut' }}
             onClick={(e) => e.stopPropagation()}
-            className="relative w-full max-w-3xl bg-white rounded-[2rem] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.35)] grid grid-cols-1 md:grid-cols-2"
+            className="relative w-full max-w-5xl bg-white rounded-[2rem] overflow-hidden shadow-[0_30px_80px_rgba(0,0,0,0.35)] grid grid-cols-1 md:grid-cols-2"
           >
             <button
               type="button"
@@ -51,7 +51,7 @@ const SummerSchoolPopup = () => {
               <X className="w-5 h-5" />
             </button>
 
-            <div className="relative h-64 md:h-auto min-h-[280px] overflow-hidden">
+            <div className="relative h-80 md:h-auto min-h-[420px] overflow-hidden">
               <img
                 src="/nova_yaz_okulu.png"
                 alt="Nova Eskrim Yaz Okulu"
@@ -60,17 +60,17 @@ const SummerSchoolPopup = () => {
               <div className="absolute inset-0 bg-gradient-to-t md:bg-gradient-to-r from-primary-900/60 via-primary-900/20 to-transparent" />
             </div>
 
-            <div className="relative p-8 lg:p-10 flex flex-col justify-center">
+            <div className="relative p-8 lg:p-12 flex flex-col justify-center">
               <div className="inline-flex items-center gap-2 self-start px-3 py-1.5 rounded-full bg-secondary-50 text-secondary-700 text-xs font-semibold uppercase tracking-wider mb-4">
                 <Sun className="w-4 h-4" />
                 Yeni Sezon
               </div>
 
-              <h3 className="text-2xl lg:text-3xl font-bold text-gray-900 mb-3 leading-tight">
+              <h3 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4 leading-tight">
                 Yaz Okulu Kayıtlarımız Başladı!
               </h3>
 
-              <p className="text-gray-600 leading-relaxed mb-6">
+              <p className="text-gray-600 text-lg leading-relaxed mb-8">
                 Çocuğunuzun yazını eğlenceli, disiplinli ve unutulmaz bir spor deneyimine dönüştürün.
                 Nova Eskrim Yaz Okulu'nda kontenjanlar dolmadan yerinizi ayırtın.
               </p>
