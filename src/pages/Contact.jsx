@@ -91,16 +91,23 @@ const ContactForm = () => {
     setErrorMsg('')
 
     try {
+      const composedMessage = [
+        formData.message,
+        '',
+        '— İletişim Bilgileri —',
+        `Telefon: ${formData.phone || '-'}`,
+        `E-posta: ${formData.email}`,
+      ].join('\n')
+
       await emailjs.send(
         serviceId,
         templateId,
         {
-          from_name: formData.name,
-          from_email: formData.email,
+          name: formData.name,
+          email: formData.email,
+          title: formData.subject || 'Web sitesi iletişim formu',
+          message: composedMessage,
           phone: formData.phone,
-          subject: formData.subject || 'Web sitesi iletişim formu',
-          message: formData.message,
-          to_email: 'novaeskrim@gmail.com',
         },
         { publicKey }
       )
