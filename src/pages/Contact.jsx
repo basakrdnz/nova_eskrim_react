@@ -1,6 +1,7 @@
-import { useState } from 'react'
-import { Phone, Mail, MapPin, Clock, Instagram, ChevronDown, Map } from 'lucide-react'
+import { useRef, useState } from 'react'
+import { Phone, Mail, MapPin, Clock, Instagram, ChevronDown, Map, Send, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
+import emailjs from '@emailjs/browser'
 
 const FAQItem = ({ question, answer, index }) => {
   const [isOpen, setIsOpen] = useState(false)
@@ -61,6 +62,190 @@ const ContactCard = ({ icon: Icon, title, content, subContent, delay }) => (
     {subContent && <div className="text-gray-500 text-sm mt-3">{subContent}</div>}
   </motion.div>
 )
+
+const ContactForm = () => {
+  const formRef = useRef(null)
+  const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
+  const [status, setStatus] = useState('idle') // idle | sending | success | error
+  const [errorMsg, setErrorMsg] = useState('')
+
+  const handleChange = (e) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    const serviceId = import.meta.env.VITE_EMAILJS_SERVICE_ID
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
+    const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+
+    if (!serviceId || !templateId || !publicKey) {
+      setStatus('error')
+      setErrorMsg('E-posta servisi henüz yapılandırılmadı. Lütfen yöneticiyle iletişime geçin.')
+      return
+    }
+
+    setStatus('sending')
+    setErrorMsg('')
+
+    try {
+      await emailjs.send(
+        serviceId,
+        templateId,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          subject: formData.subject || 'Web sitesi iletişim formu',
+          message: formData.message,
+          to_email: 'novaeskrim@gmail.com',
+        },
+        { publicKey }
+      )
+      setStatus('success')
+      setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
+    } catch (err) {
+      setStatus('error')
+      setErrorMsg(err?.text || 'Mesaj gönderilemedi. Lütfen daha sonra tekrar deneyin.')
+    }
+  }
+
+  return (
+    <section className="py-24 bg-white border-t border-gray-100">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Bize Mesaj Gönderin</h2>
+          <div className="w-16 h-1.5 bg-primary-600 mx-auto rounded-full mb-6"></div>
+          <p className="text-lg text-gray-600">Formu doldurun, en kısa sürede size dönüş yapalım.</p>
+        </div>
+
+        <motion.form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.6 }}
+          className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_20px_60px_rgba(0,0,0,0.06)] border border-gray-100 space-y-6"
+        >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div>
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Adınız Soyadınız *</label>
+              <input
+                id="name"
+                name="name"
+                type="text"
+                required
+                value={formData.name}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                placeholder="Adınız Soyadınız"
+              />
+            </div>
+            <div>
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">E-posta *</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                required
+                value={formData.email}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                placeholder="ornek@mail.com"
+              />
+            </div>
+            <div>
+              <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">Telefon</label>
+              <input
+                id="phone"
+                name="phone"
+                type="tel"
+                value={formData.phone}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                placeholder="+90 ___ ___ __ __"
+              />
+            </div>
+            <div>
+              <label htmlFor="subject" className="block text-sm font-semibold text-gray-700 mb-2">Konu</label>
+              <input
+                id="subject"
+                name="subject"
+                type="text"
+                value={formData.subject}
+                onChange={handleChange}
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                placeholder="Deneme dersi, kayıt, bilgi..."
+              />
+            </div>
+          </div>
+
+          <div>
+            <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Mesajınız *</label>
+            <textarea
+              id="message"
+              name="message"
+              required
+              rows={6}
+              value={formData.message}
+              onChange={handleChange}
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all resize-none"
+              placeholder="Bize iletmek istediğiniz mesajı yazın..."
+            />
+          </div>
+
+          <AnimatePresence>
+            {status === 'success' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                className="flex items-center gap-3 p-4 rounded-xl bg-green-50 text-green-700 border border-green-100"
+              >
+                <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
+                <span>Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.</span>
+              </motion.div>
+            )}
+            {status === 'error' && (
+              <motion.div
+                initial={{ opacity: 0, y: -10 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0 }}
+                className="flex items-center gap-3 p-4 rounded-xl bg-red-50 text-red-700 border border-red-100"
+              >
+                <AlertCircle className="w-5 h-5 flex-shrink-0" />
+                <span>{errorMsg}</span>
+              </motion.div>
+            )}
+          </AnimatePresence>
+
+          <div className="flex justify-end">
+            <button
+              type="submit"
+              disabled={status === 'sending'}
+              className="inline-flex items-center gap-2 bg-primary-600 hover:bg-primary-700 disabled:bg-primary-400 disabled:cursor-not-allowed text-white font-semibold py-3 px-8 rounded-full shadow-lg hover:shadow-xl active:scale-95 transition-all"
+            >
+              {status === 'sending' ? (
+                <>
+                  <Loader2 className="w-5 h-5 animate-spin" />
+                  Gönderiliyor...
+                </>
+              ) : (
+                <>
+                  <Send className="w-5 h-5" />
+                  Mesaj Gönder
+                </>
+              )}
+            </button>
+          </div>
+        </motion.form>
+      </div>
+    </section>
+  )
+}
 
 const Contact = () => {
   const faqs = [
@@ -152,6 +337,9 @@ const Contact = () => {
           />
         </div>
       </section>
+
+      {/* Contact Form Section */}
+      <ContactForm />
 
       {/* Map Section */}
       <section className="py-24 bg-white relative">
