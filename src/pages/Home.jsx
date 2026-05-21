@@ -1,7 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Award, Users, Calendar, Target, ArrowRight, Camera, Crown, Star, Swords } from 'lucide-react'
 import { motion, useScroll, useTransform } from 'framer-motion'
-import SummerSchoolPopup from '../components/SummerSchoolPopup'
+
 
 const Home = () => {
   const { scrollY } = useScroll()
@@ -27,7 +27,7 @@ const Home = () => {
 
   return (
     <div>
-      <SummerSchoolPopup />
+
       {/* Hero Section*/}
       <section className="relative h-[90vh] overflow-hidden">
         {/* Background Image*/}

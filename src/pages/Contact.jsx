@@ -12,7 +12,7 @@ const FAQItem = ({ question, answer, index }) => {
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ delay: index * 0.1, duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition-shadow cursor-pointer"
+      className={`rounded-2xl p-6 shadow-sm border cursor-pointer transition-all duration-300 ${isOpen ? 'bg-primary-50/60 border-primary-200 shadow-md border-l-4 border-l-primary-500' : 'bg-gray-50 border-gray-200 hover:bg-gray-100/80 hover:shadow-md border-l-4 border-l-gray-300'}`}
       onClick={() => setIsOpen(!isOpen)}
     >
       <div className="flex items-center justify-between gap-4">
@@ -120,7 +120,7 @@ const ContactForm = () => {
   }
 
   return (
-    <section className="py-24 bg-gray-100/80 border-t border-gray-200">
+    <section className="py-24 bg-gray-50/50 border-t border-gray-100">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Bize Mesaj Gönderin</h2>
@@ -135,11 +135,11 @@ const ContactForm = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          className="bg-white rounded-[2rem] p-8 lg:p-10 shadow-[0_12px_40px_rgba(15,23,42,0.1)] border border-gray-200/90 ring-1 ring-black/5 space-y-6"
+          className="bg-gray-50 rounded-2xl p-8 lg:p-10 shadow-sm border border-gray-200 border-l-4 border-l-primary-500 space-y-6"
         >
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
-              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Adınız Soyadınız *</label>
+              <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Adınız Soyadınız <span className="text-red-500">*</span></label>
               <input
                 id="name"
                 name="name"
@@ -147,12 +147,12 @@ const ContactForm = () => {
                 required
                 value={formData.name}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
                 placeholder="Adınız Soyadınız"
               />
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">E-posta *</label>
+              <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">E-posta <span className="text-red-500">*</span></label>
               <input
                 id="email"
                 name="email"
@@ -160,7 +160,7 @@ const ContactForm = () => {
                 required
                 value={formData.email}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
                 placeholder="ornek@mail.com"
               />
             </div>
@@ -172,7 +172,7 @@ const ContactForm = () => {
                 type="tel"
                 value={formData.phone}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
                 placeholder="+90 ___ ___ __ __"
               />
             </div>
@@ -184,14 +184,14 @@ const ContactForm = () => {
                 type="text"
                 value={formData.subject}
                 onChange={handleChange}
-                className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
+                className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all"
                 placeholder="Deneme dersi, kayıt, bilgi..."
               />
             </div>
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Mesajınız *</label>
+            <label htmlFor="message" className="block text-sm font-semibold text-gray-700 mb-2">Mesajınız <span className="text-red-500">*</span></label>
             <textarea
               id="message"
               name="message"
@@ -199,7 +199,7 @@ const ContactForm = () => {
               rows={6}
               value={formData.message}
               onChange={handleChange}
-              className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all resize-none"
+              className="w-full px-4 py-3 rounded-xl border border-gray-200 bg-white focus:border-primary-500 focus:ring-2 focus:ring-primary-100 outline-none transition-all resize-none"
               placeholder="Bize iletmek istediğiniz mesajı yazın..."
             />
           </div>
@@ -349,14 +349,14 @@ const Contact = () => {
       <ContactForm />
 
       {/* Map Section */}
-      <section className="py-24 bg-white relative">
+      <section className="py-12 sm:py-16 lg:py-24 bg-white relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Bizi Ziyaret Edin</h2>
-            <p className="text-lg text-gray-500 max-w-2xl mx-auto">Tesisimizi yakından görmek ve antrenmanlarımızı izlemek için sizleri bekliyoruz.</p>
+          <div className="text-center mb-8 sm:mb-12 lg:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">Bizi Ziyaret Edin</h2>
+            <p className="text-base sm:text-lg text-gray-500 max-w-2xl mx-auto">Tesisimizi yakından görmek ve antrenmanlarımızı izlemek için sizleri bekliyoruz.</p>
           </div>
 
-          <div className="relative group rounded-[2rem] overflow-hidden shadow-2xl shadow-gray-200/50 bg-gray-100 flex items-center justify-center aspect-[16/9] lg:aspect-[21/9] min-h-[400px]">
+          <div className="relative group rounded-xl sm:rounded-2xl lg:rounded-[2rem] overflow-hidden shadow-xl sm:shadow-2xl shadow-gray-200/50 bg-gray-100 flex items-center justify-center aspect-[4/3] sm:aspect-[16/9] lg:aspect-[21/9] min-h-[280px] sm:min-h-[350px] lg:min-h-[400px]">
             {/* The Map */}
             <iframe
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3058.4069777926173!2d32.6508922!3d39.9546257!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14d3392a8309a4eb%3A0xe5a363a033b0062b!2sRelax%20G%C3%B6ksu!5e0!3m2!1str!2str!4v1709405234509!5m2!1str!2str"
@@ -366,7 +366,7 @@ const Contact = () => {
               allowFullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
-              className="absolute inset-0 grayscale-[0.2] contrast-100 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
+              className="absolute inset-0 w-full h-full grayscale-[0.2] contrast-100 opacity-90 group-hover:grayscale-0 group-hover:opacity-100 transition-all duration-700"
             ></iframe>
 
             {/* Overlay button */}
@@ -376,9 +376,9 @@ const Contact = () => {
                   href="https://maps.app.goo.gl/jkf1z5EXeLUvCgVXA?g_st=iw"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="pointer-events-auto bg-white text-primary-900 font-bold py-4 px-8 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-3"
+                  className="pointer-events-auto bg-white text-primary-900 font-bold py-3 px-6 sm:py-4 sm:px-8 rounded-full shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all flex items-center gap-2 sm:gap-3 text-sm sm:text-base"
                 >
-                  <Map className="w-5 h-5 text-primary-600" />
+                  <Map className="w-4 h-4 sm:w-5 sm:h-5 text-primary-600" />
                   Yol Tarifi Al
                 </a>
               </div>
