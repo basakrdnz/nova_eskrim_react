@@ -68,6 +68,7 @@ const ContactForm = () => {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', subject: '', message: '' })
   const [status, setStatus] = useState('idle') // idle | sending | success | error
   const [errorMsg, setErrorMsg] = useState('')
+  const [successMsg, setSuccessMsg] = useState('Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.')
 
   const handleChange = (e) => {
     const { name, value } = e.target
@@ -81,9 +82,21 @@ const ContactForm = () => {
     const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID
     const publicKey = import.meta.env.VITE_EMAILJS_PUBLIC_KEY
 
+    // EmailJS yapılandırılmamışsa kullanıcının e-posta uygulamasını dolu bir taslakla aç.
     if (!serviceId || !templateId || !publicKey) {
-      setStatus('error')
-      setErrorMsg('E-posta servisi henüz yapılandırılmadı. Lütfen yöneticiyle iletişime geçin.')
+      const mailtoSubject = encodeURIComponent(formData.subject || 'Web sitesi iletişim formu')
+      const mailtoBody = encodeURIComponent(
+        [
+          `Ad Soyad: ${formData.name}`,
+          `E-posta: ${formData.email}`,
+          `Telefon: ${formData.phone || '-'}`,
+          '',
+          formData.message,
+        ].join('\n')
+      )
+      window.location.href = `mailto:novaeskrim@gmail.com?subject=${mailtoSubject}&body=${mailtoBody}`
+      setSuccessMsg('E-posta uygulamanız açıldı. Lütfen mesajınızı oradan gönderin.')
+      setStatus('success')
       return
     }
 
@@ -91,26 +104,20 @@ const ContactForm = () => {
     setErrorMsg('')
 
     try {
-      const composedMessage = [
-        formData.message,
-        '',
-        '— İletişim Bilgileri —',
-        `Telefon: ${formData.phone || '-'}`,
-        `E-posta: ${formData.email}`,
-      ].join('\n')
-
       await emailjs.send(
         serviceId,
         templateId,
         {
-          name: formData.name,
-          email: formData.email,
-          title: formData.subject || 'Web sitesi iletişim formu',
-          message: composedMessage,
-          phone: formData.phone,
+          from_name: formData.name,
+          from_email: formData.email,
+          subject: formData.subject || 'Web sitesi iletişim formu',
+          message: formData.message,
+          phone: formData.phone || '-',
+          to_email: 'novaeskrim@gmail.com',
         },
         { publicKey }
       )
+      setSuccessMsg('Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.')
       setStatus('success')
       setFormData({ name: '', email: '', phone: '', subject: '', message: '' })
     } catch (err) {
@@ -213,7 +220,7 @@ const ContactForm = () => {
                 className="flex items-center gap-3 p-4 rounded-xl bg-green-50 text-green-700 border border-green-100"
               >
                 <CheckCircle2 className="w-5 h-5 flex-shrink-0" />
-                <span>Mesajınız başarıyla gönderildi. En kısa sürede size dönüş yapacağız.</span>
+                <span>{successMsg}</span>
               </motion.div>
             )}
             {status === 'error' && (
