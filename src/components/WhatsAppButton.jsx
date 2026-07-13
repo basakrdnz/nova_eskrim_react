@@ -6,12 +6,19 @@ const WhatsAppButton = () => {
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
 
   const handleWhatsAppClick = () => {
+    const callback = function () {
+      window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
+    };
+
     if (window.gtag) {
       window.gtag('event', 'conversion', {
-        'send_to': 'AW-CONVERSION_ID/CONVERSION_LABEL',
+        'send_to': 'AW-17896922030/_DEqCJDqx8AcEK639dVC',
+        'event_callback': callback,
       });
+    } else {
+      // gtag yüklenmediyse direkt aç
+      callback();
     }
-    window.open(whatsappUrl, '_blank', 'noopener,noreferrer');
   };
 
   return (
