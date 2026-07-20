@@ -29,6 +29,15 @@ const ScrollToTopAndLoading = () => {
     setIsLoading(true)
     window.scrollTo({ top: 0, left: 0, behavior: 'auto' })
     const timeoutId = setTimeout(() => setIsLoading(false), 250)
+
+    // GTM: Her sayfa değişikliğini bildir (SPA için gerekli)
+    window.dataLayer = window.dataLayer || []
+    window.dataLayer.push({
+      event: 'page_view',
+      page_path: location.pathname,
+      page_title: document.title,
+    })
+
     return () => clearTimeout(timeoutId)
   }, [location.pathname])
 
