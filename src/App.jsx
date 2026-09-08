@@ -37,6 +37,15 @@ const ScrollToTopAndLoading = () => {
       page_title: document.title,
     })
 
+    // Google Ads: Sayfa görüntüleme dönüşümü
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-17896922030/Nzt_CMSU5dMcEK639dVC',
+        value: 1.0,
+        currency: 'TRY',
+      })
+    }
+
     return () => clearTimeout(timeoutId)
   }, [location.pathname])
 
