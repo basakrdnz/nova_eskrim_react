@@ -19,7 +19,6 @@ import RulesVideos from './pages/RulesVideos'
 import Medals from './pages/Medals'
 import Achievements from './pages/Achievements'
 import Contact from './pages/Contact'
-import SummerSchoolPopup from './components/SummerSchoolPopup'
 
 const ScrollToTopAndLoading = () => {
   const location = useLocation()
@@ -85,7 +84,6 @@ function App() {
         </main>
         <WhatsAppButton />
         <Footer />
-        <SummerSchoolPopup />
       </div>
     </Router>
   )
