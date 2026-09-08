@@ -19,7 +19,6 @@ import RulesVideos from './pages/RulesVideos'
 import Medals from './pages/Medals'
 import Achievements from './pages/Achievements'
 import Contact from './pages/Contact'
-import SummerSchoolPopup from './components/SummerSchoolPopup'
 
 const ScrollToTopAndLoading = () => {
   const location = useLocation()
@@ -37,6 +36,15 @@ const ScrollToTopAndLoading = () => {
       page_path: location.pathname,
       page_title: document.title,
     })
+
+    // Google Ads: Sayfa görüntüleme dönüşümü
+    if (window.gtag) {
+      window.gtag('event', 'conversion', {
+        send_to: 'AW-17896922030/Nzt_CMSU5dMcEK639dVC',
+        value: 1.0,
+        currency: 'TRY',
+      })
+    }
 
     return () => clearTimeout(timeoutId)
   }, [location.pathname])
@@ -85,7 +93,6 @@ function App() {
         </main>
         <WhatsAppButton />
         <Footer />
-        <SummerSchoolPopup />
       </div>
     </Router>
   )
