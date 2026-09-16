@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Award, Target, Users, Star, User } from 'lucide-react'
 import { motion } from 'framer-motion'
 import novaDanismanImage from '../assets/nova_danışman.jpeg'
@@ -191,12 +192,12 @@ const Coaches = () => {
               Ücretsiz deneme dersimiz için hemen kayıt olun ve uzman antrenörlerimizle eskrim yolculuğunuza başlayın.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
-              <a href="/iletisim" className="bg-white text-primary-900 hover:bg-primary-50 font-bold py-5 px-10 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-white/20 active:scale-95">
+              <Link to="/iletisim" className="bg-white text-primary-900 hover:bg-primary-50 font-bold py-5 px-10 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-white/20 active:scale-95">
                 Ücretsiz Deneme Dersi
-              </a>
-              <a href="/programlar" className="border-2 border-white/30 text-white hover:bg-white/10 font-bold py-5 px-10 rounded-2xl transition-all duration-300 backdrop-blur-sm active:scale-95">
+              </Link>
+              <Link to="/programlar" className="border-2 border-white/30 text-white hover:bg-white/10 font-bold py-5 px-10 rounded-2xl transition-all duration-300 backdrop-blur-sm active:scale-95">
                 Programları İncele
-              </a>
+              </Link>
             </div>
           </div>
         </div>
