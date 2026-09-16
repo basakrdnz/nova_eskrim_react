@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Users, Target, Award, Star, Calendar, Clock, MapPin } from 'lucide-react'
 import { motion } from 'framer-motion'
 
@@ -223,12 +224,12 @@ const Groups = () => {
             faydalanın!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/iletisim" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
+            <Link to="/iletisim" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
               Ücretsiz Deneme Dersi
-            </a>
-            <a href="/antrenman-takvimi" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-medium py-3 px-8 rounded-lg transition-colors">
+            </Link>
+            <Link to="/antrenman-takvimi" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-medium py-3 px-8 rounded-lg transition-colors">
               Takvimi İncele
-            </a>
+            </Link>
           </div>
         </div>
       </section>

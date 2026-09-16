@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Award, Medal, Sparkles } from 'lucide-react'
 
 const Medals = () => {
@@ -102,12 +103,12 @@ const Medals = () => {
             Nova Eskrim ailesine katılın ve kendi başarı hikayenizi yazın!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/iletisim" className="bg-white text-yellow-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
+            <Link to="/iletisim" className="bg-white text-yellow-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
               Hemen Başlayın
-            </a>
-            <a href="/programlar" className="border-2 border-white text-white hover:bg-white hover:text-yellow-600 font-medium py-3 px-8 rounded-lg transition-colors">
+            </Link>
+            <Link to="/programlar" className="border-2 border-white text-white hover:bg-white hover:text-yellow-600 font-medium py-3 px-8 rounded-lg transition-colors">
               Programları İncele
-            </a>
+            </Link>
           </div>
         </div>
       </section>

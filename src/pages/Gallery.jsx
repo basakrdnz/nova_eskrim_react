@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { Link } from 'react-router-dom'
 import { Camera, Users, Award, Calendar, X, Maximize2 } from 'lucide-react'
 import { motion, AnimatePresence } from 'framer-motion'
 import eskrim1 from '../assets/eskrim1.JPG'
@@ -173,9 +174,9 @@ const Gallery = () => {
               Nova Eskrim ailesine katılın ve kendi başarı hikayenizi bizimle birlikte yazın.
             </p>
             <div className="flex flex-col sm:flex-row gap-6 justify-center relative z-10">
-              <a href="/iletisim" className="bg-white text-primary-900 hover:bg-primary-50 font-bold py-5 px-10 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-white/20 active:scale-95">
+              <Link to="/iletisim" className="bg-white text-primary-900 hover:bg-primary-50 font-bold py-5 px-10 rounded-2xl transition-all duration-300 shadow-xl hover:shadow-white/20 active:scale-95">
                 Hemen Kayıt Ol
-              </a>
+              </Link>
             </div>
           </div>
         </div>

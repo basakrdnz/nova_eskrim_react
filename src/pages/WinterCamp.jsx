@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import { Calendar, MapPin, Users, Award, Star } from 'lucide-react'
 
 const WinterCamp = () => {
@@ -255,12 +256,12 @@ const WinterCamp = () => {
             hemen kayıt olun!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/iletisim" className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
+            <Link to="/iletisim" className="bg-white text-blue-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
               Hemen Kayıt Ol
-            </a>
-            <a href="/yaz-kampi" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-medium py-3 px-8 rounded-lg transition-colors">
+            </Link>
+            <Link to="/yaz-kampi" className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-medium py-3 px-8 rounded-lg transition-colors">
               Yaz Kampını İncele
-            </a>
+            </Link>
           </div>
         </div>
       </section>

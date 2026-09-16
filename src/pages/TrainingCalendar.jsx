@@ -370,9 +370,9 @@ const TrainingCalendar = () => {
             size uygun saati belirlemek için bizimle iletişime geçin
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/iletisim" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
+            <Link to="/iletisim" className="bg-white text-primary-600 hover:bg-gray-100 font-medium py-3 px-8 rounded-lg transition-colors">
               İletişime Geç
-            </a>
+            </Link>
           </div>
         </div>
       </section>
